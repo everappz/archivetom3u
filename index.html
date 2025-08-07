@@ -2,15 +2,57 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- iOS Web App Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="M3U Generator">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- General Meta -->
+  <title>Create M3U Playlists from Internet Archive & Live Music Archive</title>
+  <meta name="description"
+    content="Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, or OGG with one click.">
+  <meta name="keywords"
+    content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="M3U Playlist Generator for Internet Archive">
+  <meta property="og:description"
+    content="Instantly create and download M3U playlists for concerts and recordings on the Internet Archive. Supports MP3, FLAC, OGG with previews.">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:image" content="/android-chrome-512x512.png">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="M3U Generator for Internet Archive">
+  <meta name="twitter:description"
+    content="Generate M3U playlists from Internet Archive shows and recordings. Select audio format, preview, and download in seconds.">
+  <meta name="twitter:image" content="/android-chrome-512x512.png">
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta charset="UTF-8" />
   <title>Create M3U Playlists from Internet Archive & Live Music Archive</title>
   <meta name="description"
     content="Generate M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, and OGG tracks with previews.">
   <meta name="keywords"
     content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   <style>
     body {
       padding-top: 60px;
@@ -39,16 +81,67 @@
   <div class="container">
     <h1 class="mb-4 text-center">Internet Archive M3U Playlist Builder</h1>
 
-    <div class="alert alert-warning mt-5" role="alert">
-      <strong>Disclaimer:</strong><br>
-      This tool is an independent wrapper around the <a href="https://archive.org" target="_blank">Internet Archive</a>.
-      All content and streaming links are sourced directly from the Internet Archive. Use is governed by their official
-      <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>.<br>
-      We provide no warranties, guarantees, or liability for any content accessed via this site. Use at your own risk
-      and ensure all actions comply with applicable laws and Internet Archive’s policies.
+    <div class="bg-white border rounded p-3 small text-muted text-start mt-5 description-paragraphs">
+
+      <p class="mb-2">
+        <strong>
+          <i class="bi bi-info-circle-fill me-1"></i> About this tool:
+        </strong><br>
+        This free browser-based utility allows you to instantly generate and download M3U playlists
+        from <a href="https://archive.org" target="_blank">Internet Archive</a> items, including the <a
+          href="https://archive.org/details/etree" target="_blank">Live
+          Music Archive</a>.
+        Just paste a valid item URL, select your preferred audio format (MP3, FLAC, OGG, etc.), and get a
+        fully structured M3U file for streaming with one click.
+      </p><br>
+
+      <p class="mb-2"><strong><i class="bi bi-check-circle-fill"></i> Supported Formats:</strong><br>
+        &ndash; VBR MP3<br>
+        &ndash; FLAC<br>
+        &ndash; 24BIT FLAC<br>
+        &ndash; OGG VORBIS<br>
+        Only tracks available in your selected format will be included in the generated playlist.
+      </p><br>
+
+      <p class="mb-2"><strong><i class="bi bi-lightning-charge-fill"></i> How It Works:</strong><br>
+        This tool connects directly to the <a href="https://archive.org" target="_blank">Internet Archive</a> metadata
+        API. No content is hosted or mirrored by this site. It simply fetches publicly available metadata and builds an
+        M3U playlist based on your selection.
+        You can also preview each track with an inline audio player.
+      </p><br>
+
+      <p class="mb-2"><strong><i class="bi bi-arrow-down-circle-fill"></i> Downloading:</strong><br>
+        Once generated, your playlist can be downloaded as a standard <code>.m3u</code> file compatible with most audio
+        players. No account, login, or software installation is required.
+      </p><br>
+
+      <p class="mb-2"><strong><i class="bi bi-shield-lock-fill"></i> Privacy:</strong><br>
+        All processing happens in your browser. This site does not store or track any user input, playback history, or
+        downloaded files. Your data stays private and never leaves your device.
+      </p><br>
+
+      <p class="mb-2"><strong><i class="bi bi-github"></i> Contribute on GitHub:</strong><br>
+        This tool is open-source! If you'd like to improve it, report bugs, or suggest features, visit the project
+        page:<br>
+        <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+          https://github.com/everappz/archivetom3u
+        </a>
+      </p>
+
+      <hr class="my-3">
+
+      <p class="mb-2"><strong><i class="bi bi-exclamation-triangle-fill text-warning"></i> Disclaimer:</strong><br>
+        This site is an independent interface built for convenience and educational purposes only. It is not affiliated
+        with or endorsed by the Internet Archive.<br>
+        All audio content and media links are streamed directly from <a href="https://archive.org"
+          target="_blank">archive.org</a>, and usage is subject to their official <a
+          href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>.<br>
+        No warranties are provided. Use at your own risk and ensure compliance with any copyright, licensing, or usage
+        policies associated with the content.
+      </p>
     </div>
 
-    <div class="mb-3">
+    <div class="my-3">
       <label for="archiveUrl" class="form-label">Enter Internet Archive Item URL</label>
       <input type="text" class="form-control" id="archiveUrl" placeholder="https://archive.org/details/..." />
     </div>
@@ -72,6 +165,16 @@
         <i class="bi bi-download me-1"></i> Download M3U
       </a>
     </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingIndicator" class="text-center my-4 d-none">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Error Alert -->
+    <div id="errorAlert" class="alert alert-danger my-4 d-none" role="alert"></div>
 
     <!-- M3U Output Section -->
     <div id="outputSection" class="mt-4 d-none">
@@ -105,19 +208,23 @@
 
   <script>
     async function generateM3U() {
-      // 🔄 Reset output visibility
-      document.getElementById('outputSection').classList.add('d-none');
-      document.getElementById('previewSection').classList.add('d-none');
-
       const input = document.getElementById('archiveUrl').value.trim();
       const format = document.getElementById('formatSelect').value;
       const resultDiv = document.getElementById('result');
       const trackList = document.getElementById('trackList');
       const downloadBtn = document.getElementById('downloadBtn');
+      const loading = document.getElementById('loadingIndicator');
+      const errorAlert = document.getElementById('errorAlert');
+
+      // 🔄 Reset UI
+      document.getElementById('outputSection').classList.add('d-none');
+      document.getElementById('previewSection').classList.add('d-none');
+      downloadBtn.classList.add('d-none');
+      errorAlert.classList.add('d-none');
+      loading.classList.remove('d-none');
 
       resultDiv.textContent = 'Loading...';
       trackList.innerHTML = '';
-      downloadBtn.classList.add('d-none');
 
       try {
         const identifier = input.match(/\/details\/([^/?#]+)/)?.[1];
@@ -152,12 +259,19 @@
         resultDiv.textContent = m3u;
 
         const blob = new Blob([m3u], { type: 'audio/x-mpegurl' });
-        downloadBtn.href = URL.createObjectURL(blob);
+        const url = URL.createObjectURL(blob);
+        downloadBtn.href = url;
+        downloadBtn.setAttribute('download', `${identifier}.m3u`);
         downloadBtn.classList.remove('d-none');
         document.getElementById('outputSection').classList.remove('d-none');
         document.getElementById('previewSection').classList.remove('d-none');
+
       } catch (err) {
-        resultDiv.textContent = '⚠️ Error: ' + err.message;
+        errorAlert.textContent = '⚠️ ' + err.message;
+        errorAlert.classList.remove('d-none');
+        resultDiv.textContent = '';
+      } finally {
+        loading.classList.add('d-none');
       }
     }
 
@@ -185,6 +299,16 @@
         }, 2000);
       });
     });
+
+    // Handle exclusive audio playback
+    document.addEventListener('play', function (e) {
+      const audios = document.querySelectorAll('audio');
+      for (const audio of audios) {
+        if (audio !== e.target) {
+          audio.pause();
+        }
+      }
+    }, true);
 
   </script>
 </body>
