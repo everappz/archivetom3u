@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create M3U Playlists from Internet Archive & Live Music Archive</title>
+  <meta name="description" content="Generate M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, and OGG tracks with previews.">
+  <meta name="keywords" content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding-top: 60px; }
+    .m3u-block { white-space: pre-wrap; background: #f8f9fa; padding: 1em; border: 1px solid #ddd; border-radius: 5px; }
+    .track { margin-bottom: 1rem; }
+    audio { width: 100%; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4 text-center">Internet Archive M3U Playlist Builder</h1>
+
+    <div class="mb-3">
+      <label for="archiveUrl" class="form-label">Enter Internet Archive Item URL</label>
+      <input type="text" class="form-control" id="archiveUrl" placeholder="https://archive.org/details/..." />
+    </div>
+
+    <div class="mb-3">
+      <label for="formatSelect" class="form-label">Select Audio Format</label>
+      <select class="form-select" id="formatSelect">
+        <option value="VBR MP3" selected>MP3</option>
+        <option value="Flac">FLAC</option>
+        <option value="OGG VORBIS">OGG</option>
+      </select>
+    </div>
+
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" onclick="generateM3U()">Generate Playlist</button>
+      <a id="downloadBtn" class="btn btn-success d-none" download="playlist.m3u">Download M3U</a>
+    </div>
+
+    <div class="mt-4">
+      <h5>M3U Playlist Output:</h5>
+      <div id="result" class="m3u-block"></div>
+    </div>
+
+    <div class="mt-4">
+      <h5>Preview Tracks:</h5>
+      <div id="trackList"></div>
+    </div>
+	
+	<div class="alert alert-warning mt-5" role="alert">
+	      <strong>Disclaimer:</strong><br>
+	      This tool is an independent wrapper around the <a href="https://archive.org" target="_blank">Internet Archive</a>. All content and streaming links are sourced directly from the Internet Archive. Use is governed by their official <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>.<br>
+	      We provide no warranties, guarantees, or liability for any content accessed via this site. Use at your own risk and ensure all actions comply with applicable laws and Internet Archive’s policies.
+	    </div>
+
+	    <footer class="text-center">
+	      © Mycompany 2025
+	    </footer>
+		
+  </div>
+
+  <script>
+    async function generateM3U() {
+      const input = document.getElementById('archiveUrl').value.trim();
+      const format = document.getElementById('formatSelect').value;
+      const resultDiv = document.getElementById('result');
+      const trackList = document.getElementById('trackList');
+      const downloadBtn = document.getElementById('downloadBtn');
+
+      resultDiv.textContent = 'Loading...';
+      trackList.innerHTML = '';
+      downloadBtn.classList.add('d-none');
+
+      try {
+        const identifier = input.match(/\/details\/([^/?#]+)/)?.[1];
+        if (!identifier) throw new Error('Invalid Archive URL');
+
+        const metadataUrl = `https://archive.org/metadata/${identifier}`;
+        const res = await fetch(metadataUrl);
+        if (!res.ok) throw new Error('Failed to fetch metadata');
+
+        const data = await res.json();
+        const files = data.files;
+        const server = data.server || 'archive.org';
+        const dir = data.dir;
+
+        const matches = files.filter(file => file.format?.toUpperCase() === format.toUpperCase());
+        if (matches.length === 0) throw new Error(`No files found for format: ${format}`);
+
+        let m3u = `#EXTM3U\n`;
+
+        matches.forEach(file => {
+          const title = file.title || file.name;
+          const duration = parseDuration(file.length);
+          const fileUrl = `https://${server}${dir}/${file.name}`;
+          m3u += `#EXTINF:${duration},${title}\n${fileUrl}\n`;
+
+          const trackEl = document.createElement('div');
+          trackEl.classList.add('track');
+          trackEl.innerHTML = `<strong>${title}</strong><br><audio controls src="${fileUrl}"></audio>`;
+          trackList.appendChild(trackEl);
+        });
+
+        resultDiv.textContent = m3u;
+
+        const blob = new Blob([m3u], { type: 'audio/x-mpegurl' });
+        downloadBtn.href = URL.createObjectURL(blob);
+        downloadBtn.classList.remove('d-none');
+      } catch (err) {
+        resultDiv.textContent = '⚠️ Error: ' + err.message;
+      }
+    }
+
+    function parseDuration(str) {
+      if (!str) return -1;
+      const parts = str.split(':').map(Number);
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+      if (parts.length === 2) return parts[0] * 60 + parts[1];
+      return Math.floor(Number(str)) || -1;
+    }
+  </script>
+</body>
+</html>
