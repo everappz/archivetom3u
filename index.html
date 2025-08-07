@@ -265,7 +265,12 @@
         const blobUrl = URL.createObjectURL(blob);
 
         if (redirect) {
-          window.location.href = blobUrl;
+          const a = document.createElement('a');
+          a.href = blobUrl;
+          a.download = `${identifier}.m3u`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
           return;
         }
 
