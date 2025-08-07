@@ -207,7 +207,8 @@
   </div>
 
   <script>
-    async function generateM3U() {
+
+    async function generateM3U(redirect = false) {
       const input = document.getElementById('archiveUrl').value.trim();
       const format = document.getElementById('formatSelect').value;
       const resultDiv = document.getElementById('result');
@@ -216,15 +217,17 @@
       const loading = document.getElementById('loadingIndicator');
       const errorAlert = document.getElementById('errorAlert');
 
-      // 🔄 Reset UI
-      document.getElementById('outputSection').classList.add('d-none');
-      document.getElementById('previewSection').classList.add('d-none');
-      downloadBtn.classList.add('d-none');
-      errorAlert.classList.add('d-none');
-      loading.classList.remove('d-none');
+      // Reset UI only if not redirect
+      if (!redirect) {
+        document.getElementById('outputSection').classList.add('d-none');
+        document.getElementById('previewSection').classList.add('d-none');
+        downloadBtn.classList.add('d-none');
+        errorAlert.classList.add('d-none');
+        loading.classList.remove('d-none');
 
-      resultDiv.textContent = 'Loading...';
-      trackList.innerHTML = '';
+        resultDiv.textContent = 'Loading...';
+        trackList.innerHTML = '';
+      }
 
       try {
         const identifier = input.match(/\/details\/([^/?#]+)/)?.[1];
@@ -250,17 +253,24 @@
           const fileUrl = `https://${server}${dir}/${file.name}`;
           m3u += `#EXTINF:${duration},${title}\n${fileUrl}\n`;
 
-          const trackEl = document.createElement('div');
-          trackEl.classList.add('track');
-          trackEl.innerHTML = `${index + 1}. <strong>${title}</strong><br><audio controls src="${fileUrl}"></audio>`;
-          trackList.appendChild(trackEl);
+          if (!redirect) {
+            const trackEl = document.createElement('div');
+            trackEl.classList.add('track');
+            trackEl.innerHTML = `${index + 1}. <strong>${title}</strong><br><audio controls src="${fileUrl}"></audio>`;
+            trackList.appendChild(trackEl);
+          }
         });
 
-        resultDiv.textContent = m3u;
-
         const blob = new Blob([m3u], { type: 'audio/x-mpegurl' });
-        const url = URL.createObjectURL(blob);
-        downloadBtn.href = url;
+        const blobUrl = URL.createObjectURL(blob);
+
+        if (redirect) {
+          window.location.href = blobUrl;
+          return;
+        }
+
+        resultDiv.textContent = m3u;
+        downloadBtn.href = blobUrl;
         downloadBtn.setAttribute('download', `${identifier}.m3u`);
         downloadBtn.classList.remove('d-none');
         document.getElementById('outputSection').classList.remove('d-none');
@@ -271,7 +281,9 @@
         errorAlert.classList.remove('d-none');
         resultDiv.textContent = '';
       } finally {
-        loading.classList.add('d-none');
+        if (!redirect) {
+          loading.classList.add('d-none');
+        }
       }
     }
 
@@ -309,6 +321,18 @@
         }
       }
     }, true);
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const match = window.location.pathname.match(/^\/details\/(.+)/);
+      if (match) {
+        const identifier = match[1];
+        const archiveUrl = `https://archive.org/details/${identifier}`;
+        document.getElementById('archiveUrl').value = archiveUrl;
+        document.getElementById('formatSelect').value = 'VBR MP3';
+        generateM3U(true); // automatic + redirect
+      }
+    });
 
   </script>
 </body>
