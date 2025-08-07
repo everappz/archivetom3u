@@ -244,7 +244,7 @@
 
         let m3u = `#EXTM3U\n`;
 
-        matches.forEach(file => {
+        matches.forEach((file, index) => {
           const title = file.title || file.name;
           const duration = parseDuration(file.length);
           const fileUrl = `https://${server}${dir}/${file.name}`;
@@ -252,7 +252,7 @@
 
           const trackEl = document.createElement('div');
           trackEl.classList.add('track');
-          trackEl.innerHTML = `<strong>${title}</strong><br><audio controls src="${fileUrl}"></audio>`;
+          trackEl.innerHTML = `${index + 1}. <strong>${title}</strong><br><audio controls src="${fileUrl}"></audio>`;
           trackList.appendChild(trackEl);
         });
 
