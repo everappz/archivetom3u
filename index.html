@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <!-- Favicon and App Icons -->
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60x60.png">
@@ -31,35 +30,29 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
   <!-- General Meta -->
-  <title>Create M3U Playlists from Internet Archive & Live Music Archive</title>
-  <meta name="description"
-    content="Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, or OGG with one click.">
-  <meta name="keywords"
-    content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
+  <title id="metaTitle">Create M3U Playlists from Internet Archive & Live Music Archive</title>
+  <meta id="metaDescription" name="description"
+        content="Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, or OGG with one click.">
+  <meta id="metaKeywords" name="keywords"
+        content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="M3U Playlist Generator for Internet Archive">
-  <meta property="og:description"
-    content="Instantly create and download M3U playlists for concerts and recordings on the Internet Archive. Supports MP3, FLAC, OGG with previews.">
+  <meta id="ogTitle" property="og:title" content="M3U Playlist Generator for Internet Archive">
+  <meta id="ogDescription" property="og:description"
+        content="Instantly create and download M3U playlists for concerts and recordings on the Internet Archive. Supports MP3, FLAC, OGG with previews.">
   <meta property="og:url" content="https://archivetom3u.com/">
   <meta property="og:image" content="/favicon-512x512.png">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="M3U Generator for Internet Archive">
-  <meta name="twitter:description"
-    content="Generate M3U playlists from Internet Archive shows and recordings. Select audio format, preview, and download in seconds.">
+  <meta id="twitterTitle" name="twitter:title" content="M3U Generator for Internet Archive">
+  <meta id="twitterDescription" name="twitter:description"
+        content="Generate M3U playlists from Internet Archive shows and recordings. Select audio format, preview, and download in seconds.">
   <meta name="twitter:image" content="/favicon-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <meta charset="UTF-8" />
-  <title>Create M3U Playlists from Internet Archive & Live Music Archive</title>
-  <meta name="description"
-    content="Generate M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, and OGG tracks with previews.">
-  <meta name="keywords"
-    content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -90,97 +83,120 @@
 
 <body>
   <div class="container">
-    <h1 class="mb-4 text-center">Internet Archive M3U Playlist Builder</h1>
 
+    <!-- Language Switcher -->
+    <div class="d-flex justify-content-end">
+      <select id="langSelect" class="form-select w-auto mb-3" aria-label="Language switcher">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+      </select>
+    </div>
+
+    <h1 id="pageTitle" class="mb-4 text-center">Internet Archive M3U Playlist Builder</h1>
+
+    <!-- About / How it works -->
     <div class="bg-white border rounded p-3 small text-muted text-start mt-5 description-paragraphs">
-
       <p class="mb-2">
         <strong>
-          <i class="bi bi-info-circle-fill me-1"></i> About this tool:
+          <i class="bi bi-info-circle-fill me-1"></i>
+          <span id="aboutHeading">About this tool:</span>
         </strong><br>
-        This free browser-based utility allows you to instantly generate and download M3U playlists
-        from <a href="https://archive.org" target="_blank">Internet Archive</a> items, including the <a
-          href="https://archive.org/details/etree" target="_blank">Live
-          Music Archive</a>.
-        Just paste a valid item URL, select your preferred audio format (MP3, FLAC, OGG, etc.), and get a
-        fully structured M3U file for streaming with one click.
+        <span id="aboutBody">
+          This free browser-based utility allows you to instantly generate and download M3U playlists from
+          <a href="https://archive.org" target="_blank">Internet Archive</a> items, including the
+          <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Just paste a valid item URL,
+          select your preferred audio format (MP3, FLAC, OGG, etc.), and get a fully structured M3U file for streaming with one click.
+        </span>
       </p><br>
 
-      <p class="mb-2"><strong><i class="bi bi-check-circle-fill"></i> Supported Formats:</strong><br>
-        &ndash; VBR MP3<br>
-        &ndash; FLAC<br>
-        &ndash; 24BIT FLAC<br>
-        &ndash; OGG VORBIS<br>
-        Only tracks available in your selected format will be included in the generated playlist.
+      <p class="mb-2">
+        <strong><i class="bi bi-check-circle-fill"></i> <span id="supportedHeading">Supported Formats:</span></strong><br>
+        <span id="supportedBody">
+          &ndash; VBR MP3<br>
+          &ndash; FLAC<br>
+          &ndash; 24BIT FLAC<br>
+          &ndash; OGG VORBIS<br>
+          Only tracks available in your selected format will be included in the generated playlist.
+        </span>
       </p><br>
 
-      <p class="mb-2"><strong><i class="bi bi-lightning-charge-fill"></i> How It Works:</strong><br>
-        This tool connects directly to the <a href="https://archive.org" target="_blank">Internet Archive</a> metadata
-        API. No content is hosted or mirrored by this site. It simply fetches publicly available metadata and builds an
-        M3U playlist based on your selection.
-        You can also preview each track with an inline audio player.
+      <p class="mb-2">
+        <strong><i class="bi bi-lightning-charge-fill"></i> <span id="howHeading">How It Works:</span></strong><br>
+        <span id="howBody">
+          This tool connects directly to the Internet Archive metadata API. No content is hosted or mirrored by this site.
+          It simply fetches publicly available metadata and builds an M3U playlist based on your selection. You can also preview each track with an inline audio player.
+        </span>
       </p><br>
 
-      <p class="mb-2"><strong><i class="bi bi-arrow-down-circle-fill"></i> Downloading:</strong><br>
-        Once generated, your playlist can be downloaded as a standard <code>.m3u</code> file compatible with most audio
-        players. No account, login, or software installation is required.
+      <p class="mb-2">
+        <strong><i class="bi bi-arrow-down-circle-fill"></i> <span id="downloadingHeading">Downloading:</span></strong><br>
+        <span id="downloadingBody">
+          Once generated, your playlist can be downloaded as a standard <code>.m3u</code> file compatible with most audio players.
+          No account, login, or software installation is required.
+        </span>
       </p><br>
 
-      <p class="mb-2"><strong><i class="bi bi-shield-lock-fill"></i> Privacy:</strong><br>
-        All processing happens in your browser. This site does not store or track any user input, playback history, or
-        downloaded files. Your data stays private and never leaves your device.
+      <p class="mb-2">
+        <strong><i class="bi bi-shield-lock-fill"></i> <span id="privacyHeading">Privacy:</span></strong><br>
+        <span id="privacyBody">
+          All processing happens in your browser. This site does not store or track any user input, playback history, or downloaded files.
+          Your data stays private and never leaves your device.
+        </span>
       </p><br>
 
-      <p class="mb-2"><strong><i class="bi bi-github"></i> Contribute on GitHub:</strong><br>
-        This tool is open-source! If you'd like to improve it, report bugs, or suggest features, visit the project
-        page:<br>
-        <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
-          https://github.com/everappz/archivetom3u
-        </a>
+      <p class="mb-2">
+        <strong><i class="bi bi-github"></i> <span id="contribHeading">Contribute on GitHub:</span></strong><br>
+        <span id="contribBody">
+          This tool is open-source! If you'd like to improve it, report bugs, or suggest features, visit the project page:<br>
+          <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+            https://github.com/everappz/archivetom3u
+          </a>
+        </span>
       </p>
 
       <hr class="my-3">
 
-      <p class="mb-2"><strong><i class="bi bi-exclamation-triangle-fill text-warning"></i> Disclaimer:</strong><br>
-        This site is an independent interface built for convenience and educational purposes only. It is not affiliated
-        with or endorsed by the Internet Archive.<br>
-        All audio content and media links are streamed directly from <a href="https://archive.org"
-          target="_blank">archive.org</a>, and usage is subject to their official <a
-          href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>.<br>
-        No warranties are provided. Use at your own risk and ensure compliance with any copyright, licensing, or usage
-        policies associated with the content.
+      <p class="mb-2">
+        <strong><i class="bi bi-exclamation-triangle-fill text-warning"></i> <span id="disclaimerHeading">Disclaimer:</span></strong><br>
+        <span id="disclaimerBody">
+          This site is an independent interface built for convenience and educational purposes only. It is not affiliated with or endorsed by the Internet Archive.
+          All audio content and media links are streamed directly from <a href="https://archive.org" target="_blank">archive.org</a>, and usage is subject to their official
+          <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>. No warranties are provided. Use at your own risk and ensure compliance with any copyright,
+          licensing, or usage policies associated with the content.
+        </span>
       </p>
     </div>
 
+    <!-- Form -->
     <div class="my-3">
-      <label for="archiveUrl" class="form-label">Enter Internet Archive Item URL</label>
+      <label id="labelUrl" for="archiveUrl" class="form-label">Enter Internet Archive Item URL</label>
       <input type="text" class="form-control" id="archiveUrl" placeholder="https://archive.org/details/..." />
     </div>
 
     <div class="mb-3">
-      <label for="formatSelect" class="form-label">Select Audio Format</label>
+      <label id="labelFormat" for="formatSelect" class="form-label">Select Audio Format</label>
       <select class="form-select" id="formatSelect">
-        <option value="VBR MP3" selected>VBR MP3</option>
-        <option value="Flac">FLAC</option>
-        <option value="24bit Flac">24BIT FLAC</option>
-        <option value="OGG VORBIS">OGG VORBIS</option>
+        <option id="optMp3" value="VBR MP3">VBR MP3</option>
+        <option id="optFlac" value="Flac">FLAC</option>
+        <option id="opt24Flac" value="24bit Flac">24BIT FLAC</option>
+        <option id="optOgg" value="OGG VORBIS">OGG VORBIS</option>
       </select>
     </div>
 
     <div class="d-grid gap-3">
-      <button class="btn btn-primary" onclick="generateM3U()">
-        <i class="bi bi-music-note-list me-1"></i> Generate Playlist
+      <button id="btnGenerate" class="btn btn-primary" onclick="generateM3U()">
+        <i class="bi bi-music-note-list me-1"></i> <span id="btnGenerateText">Generate Playlist</span>
       </button>
 
       <a id="downloadBtn" class="btn btn-success d-none" download="playlist.m3u">
-        <i class="bi bi-download me-1"></i> Download M3U
+        <i class="bi bi-download me-1"></i> <span id="btnDownloadText">Download M3U</span>
       </a>
     </div>
 
     <!-- Loading Spinner -->
     <div id="loadingIndicator" class="text-center my-4 d-none">
       <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
+        <span id="loadingText" class="visually-hidden">Loading...</span>
       </div>
     </div>
 
@@ -190,7 +206,7 @@
     <!-- M3U Output Section -->
     <div id="outputSection" class="mt-4 d-none">
       <h5 class="d-flex align-items-center justify-content-between">
-        <span>M3U Playlist Output</span>
+        <span id="outputTitle">M3U Playlist Output</span>
         <i class="bi bi-clipboard text-secondary" id="copyM3U" style="cursor:pointer;" title="Copy to clipboard"></i>
       </h5>
       <div id="result" class="m3u-block"></div>
@@ -198,27 +214,240 @@
 
     <!-- Preview Section -->
     <div id="previewSection" class="mt-4 d-none">
-      <h5>Track Previews</h5>
+      <h5 id="previewTitle">Track Previews</h5>
       <div id="trackList" class="m3u-block"></div>
     </div>
 
     <footer class="text-center mt-5 text-muted small">
       <p class="mb-1 text-secondary">
-        <a href="https://github.com/everappz/archivetom3u/edit/main/index.html" target="_blank"
-          class="text-decoration-none text-secondary">
-          Edit this page on GitHub →
-        </a>
+        <a id="editOnGithub" href="https://github.com/everappz/archivetom3u/edit/main/index.html" target="_blank"
+           class="text-decoration-none text-secondary">Edit this page on GitHub →</a>
       </p>
-      <p class="mt-3 mb-4 text-secondary">
-        &copy; 2025 <a href="https://www.everappz.com/" target="_blank"
-          class="text-decoration-none text-secondary">EVERAPPZ SL</a>
+      <p class="mt-3 mb-4 text-secondary" id="copyright">
+        &copy; 2025 <a href="https://www.everappz.com/" target="_blank" class="text-decoration-none text-secondary">EVERAPPZ SL</a>
       </p>
     </footer>
 
   </div>
 
   <script>
+    // ====== Translations ======
+    const i18n = {
+      en: {
+        langCode: "en",
+        metaTitle: "Create M3U Playlists from Internet Archive & Live Music Archive",
+        metaDesc: "Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Stream or download MP3, FLAC, or OGG with one click.",
+        metaKeywords: "m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist",
+        ogTitle: "M3U Playlist Generator for Internet Archive",
+        ogDesc: "Instantly create and download M3U playlists for concerts and recordings on the Internet Archive. Supports MP3, FLAC, OGG with previews.",
+        twitterTitle: "M3U Generator for Internet Archive",
+        twitterDesc: "Generate M3U playlists from Internet Archive shows and recordings. Select audio format, preview, and download in seconds.",
 
+        pageTitle: "Internet Archive M3U Playlist Builder",
+        aboutHeading: "About this tool:",
+        aboutBody: `This free browser-based utility allows you to instantly generate and download M3U playlists from
+          <a href="https://archive.org" target="_blank">Internet Archive</a> items, including the
+          <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Just paste a valid item URL,
+          select your preferred audio format (MP3, FLAC, OGG, etc.), and get a fully structured M3U file for streaming with one click.`,
+        supportedHeading: "Supported Formats:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+          Only tracks available in your selected format will be included in the generated playlist.`,
+        howHeading: "How It Works:",
+        howBody: `This tool connects directly to the Internet Archive metadata API. No content is hosted or mirrored by this site.
+          It simply fetches publicly available metadata and builds an M3U playlist based on your selection.
+          You can also preview each track with an inline audio player.`,
+        downloadingHeading: "Downloading:",
+        downloadingBody: `Once generated, your playlist can be downloaded as a standard <code>.m3u</code> file compatible with most audio players.
+          No account, login, or software installation is required.`,
+        privacyHeading: "Privacy:",
+        privacyBody: `All processing happens in your browser. This site does not store or track any user input, playback history, or downloaded files.
+          Your data stays private and never leaves your device.`,
+        contribHeading: "Contribute on GitHub:",
+        contribBody: `This tool is open-source! If you'd like to improve it, report bugs, or suggest features, visit the project page:<br>
+          <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+            https://github.com/everappz/archivetom3u
+          </a>`,
+        disclaimerHeading: "Disclaimer:",
+        disclaimerBody: `This site is an independent interface built for convenience and educational purposes only. It is not affiliated with or endorsed by the Internet Archive.
+          All audio content and media links are streamed directly from <a href="https://archive.org" target="_blank">archive.org</a>, and usage is subject to their official
+          <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>. No warranties are provided. Use at your own risk and ensure compliance with any copyright,
+          licensing, or usage policies associated with the content.`,
+
+        labelUrl: "Enter Internet Archive Item URL",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Select Audio Format",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Generate Playlist",
+        btnDownload: "Download M3U",
+        loadingText: "Loading...",
+
+        outputTitle: "M3U Playlist Output",
+        previewTitle: "Track Previews",
+        copyTitle: "Copy to clipboard",
+
+        // Errors
+        errInvalidUrl: "Invalid Archive URL",
+        errFetch: "Failed to fetch metadata",
+        errNoFormatPrefix: "No files found for format: ",
+
+        // Misc
+        editOnGithub: "Edit this page on GitHub →"
+      },
+
+      ru: {
+        langCode: "ru",
+        metaTitle: "Создание плейлистов M3U из Internet Archive и Live Music Archive",
+        metaDesc: "Создавайте плейлисты M3U из концертов Internet Archive и записей Live Music Archive. Воспроизведение или загрузка MP3, FLAC и OGG в один клик.",
+        metaKeywords: "генератор m3u, создать m3u для internet archive, live music archive m3u, плейлист flac, аудиоплеер internet archive, archive.org плейлист",
+        ogTitle: "Генератор M3U для Internet Archive",
+        ogDesc: "Мгновенно создавайте и скачивайте M3U-плейлисты для концертов и записей на Internet Archive. Поддержка MP3, FLAC, OGG и предпросмотра.",
+        twitterTitle: "M3U Генератор для Internet Archive",
+        twitterDesc: "Создавайте M3U-плейлисты из записей Internet Archive. Выберите формат, просмотрите и скачайте за секунды.",
+
+        pageTitle: "Генератор плейлистов M3U для Internet Archive",
+        aboutHeading: "О сервисе:",
+        aboutBody: `Этот бесплатный инструмент в браузере позволяет мгновенно создавать и скачивать плейлисты M3U из записей
+          <a href="https://archive.org" target="_blank">Internet Archive</a>, включая
+          <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Вставьте ссылку на запись,
+          выберите формат (MP3, FLAC, OGG и др.) и получите готовый M3U для потокового прослушивания.`,
+        supportedHeading: "Поддерживаемые форматы:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+          В плейлист попадут только треки, доступные в выбранном формате.`,
+        howHeading: "Как это работает:",
+        howBody: `Инструмент обращается напрямую к API метаданных Internet Archive. Сайт не хранит и не зеркалирует контент —
+          он получает общедоступные метаданные и формирует плейлист M3U по вашему выбору. Также доступен предпрослушивание треков через встроенный плеер.`,
+        downloadingHeading: "Загрузка:",
+        downloadingBody: `После генерации вы можете скачать стандартный файл <code>.m3u</code>, совместимый с большинством аудиоплееров.
+          Регистрация и установка программ не требуется.`,
+        privacyHeading: "Конфиденциальность:",
+        privacyBody: `Все операции выполняются в вашем браузере. Сайт не хранит и не отслеживает ваши данные, историю воспроизведения или загрузки.
+          Ваши данные остаются только на вашем устройстве.`,
+        contribHeading: "Участвовать на GitHub:",
+        contribBody: `Проект с открытым исходным кодом! Если хотите улучшить инструмент, сообщить об ошибках или предложить функции, посетите страницу проекта:<br>
+          <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+            https://github.com/everappz/archivetom3u
+          </a>`,
+        disclaimerHeading: "Отказ от ответственности:",
+        disclaimerBody: `Сайт является независимым интерфейсом для удобства и обучения и не связан с Internet Archive.
+          Весь аудиоконтент и ссылки транслируются напрямую с <a href="https://archive.org" target="_blank">archive.org</a>.
+          Использование регулируется их <a href="https://archive.org/about/terms.php" target="_blank">условиями</a>.
+          Гарантии не предоставляются. Используйте на свой риск и соблюдайте авторские права и лицензии.`,
+
+        labelUrl: "Введите ссылку на элемент Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Выберите аудиоформат",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Сгенерировать плейлист",
+        btnDownload: "Скачать M3U",
+        loadingText: "Загрузка...",
+
+        outputTitle: "Содержимое плейлиста M3U",
+        previewTitle: "Предпрослушивание треков",
+        copyTitle: "Скопировать в буфер обмена",
+
+        // Errors
+        errInvalidUrl: "Неверная ссылка Internet Archive",
+        errFetch: "Не удалось получить метаданные",
+        errNoFormatPrefix: "Файлы не найдены для формата: ",
+
+        // Misc
+        editOnGithub: "Изменить эту страницу на GitHub →"
+      }
+    };
+
+    const langSelect = document.getElementById('langSelect');
+
+    function applyLanguage(lang) {
+      const t = i18n[lang] || i18n.en;
+
+      // <html lang="">
+      document.documentElement.setAttribute('lang', t.langCode);
+
+      // Meta
+      document.getElementById('metaTitle').innerText = t.metaTitle;
+      document.title = t.metaTitle;
+      document.getElementById('metaDescription').setAttribute('content', t.metaDesc);
+      document.getElementById('metaKeywords').setAttribute('content', t.metaKeywords);
+      document.getElementById('ogTitle').setAttribute('content', t.ogTitle);
+      document.getElementById('ogDescription').setAttribute('content', t.ogDesc);
+      document.getElementById('twitterTitle').setAttribute('content', t.twitterTitle);
+      document.getElementById('twitterDescription').setAttribute('content', t.twitterDesc);
+
+      // Headings and paragraphs
+      document.getElementById('pageTitle').innerText = t.pageTitle;
+
+      document.getElementById('aboutHeading').innerText = t.aboutHeading;
+      document.getElementById('aboutBody').innerHTML = t.aboutBody;
+
+      document.getElementById('supportedHeading').innerText = t.supportedHeading;
+      document.getElementById('supportedBody').innerHTML = t.supportedBody;
+
+      document.getElementById('howHeading').innerText = t.howHeading;
+      document.getElementById('howBody').innerHTML = t.howBody;
+
+      document.getElementById('downloadingHeading').innerText = t.downloadingHeading;
+      document.getElementById('downloadingBody').innerHTML = t.downloadingBody;
+
+      document.getElementById('privacyHeading').innerText = t.privacyHeading;
+      document.getElementById('privacyBody').innerHTML = t.privacyBody;
+
+      document.getElementById('contribHeading').innerText = t.contribHeading;
+      document.getElementById('contribBody').innerHTML = t.contribBody;
+
+      document.getElementById('disclaimerHeading').innerText = t.disclaimerHeading;
+      document.getElementById('disclaimerBody').innerHTML = t.disclaimerBody;
+
+      // Form labels & options
+      document.getElementById('labelUrl').innerText = t.labelUrl;
+      document.getElementById('archiveUrl').setAttribute('placeholder', t.placeholderUrl);
+
+      document.getElementById('labelFormat').innerText = t.labelFormat;
+      document.getElementById('optMp3').textContent = t.optMp3;
+      document.getElementById('optFlac').textContent = t.optFlac;
+      document.getElementById('opt24Flac').textContent = t.opt24Flac;
+      document.getElementById('optOgg').textContent = t.optOgg;
+
+      // Buttons and sections
+      document.getElementById('btnGenerateText').innerText = t.btnGenerate;
+      document.getElementById('btnDownloadText').innerText = t.btnDownload;
+      document.getElementById('loadingText').innerText = t.loadingText;
+
+      document.getElementById('outputTitle').innerText = t.outputTitle;
+      document.getElementById('previewTitle').innerText = t.previewTitle;
+
+      const copyIcon = document.getElementById('copyM3U');
+      copyIcon.setAttribute('title', t.copyTitle);
+
+      // Footer
+      document.getElementById('editOnGithub').innerText = t.editOnGithub;
+
+      // Store current error strings for runtime use
+      window.__i18nErrors = {
+        invalidUrl: t.errInvalidUrl,
+        fetchFail: t.errFetch,
+        noFormatPrefix: t.errNoFormatPrefix
+      };
+    }
+
+    // Init language: use browser setting (ru -> Russian; otherwise English)
+    (function initLanguage() {
+      const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      const defaultLang = browserLang.startsWith('ru') ? 'ru' : 'en';
+      langSelect.value = defaultLang;
+      applyLanguage(defaultLang);
+    })();
+
+    langSelect.addEventListener('change', () => applyLanguage(langSelect.value));
+
+    // ====== App Logic ======
     async function generateM3U(redirect = false) {
       const input = document.getElementById('archiveUrl').value.trim();
       const format = document.getElementById('formatSelect').value;
@@ -236,17 +465,17 @@
         errorAlert.classList.add('d-none');
         loading.classList.remove('d-none');
 
-        resultDiv.textContent = 'Loading...';
+        resultDiv.textContent = document.getElementById('loadingText').innerText || 'Loading...';
         trackList.innerHTML = '';
       }
 
       try {
         const identifier = input.match(/\/details\/([^/?#]+)/)?.[1];
-        if (!identifier) throw new Error('Invalid Archive URL');
+        if (!identifier) throw new Error(window.__i18nErrors?.invalidUrl || 'Invalid Archive URL');
 
         const metadataUrl = `https://archive.org/metadata/${identifier}`;
         const res = await fetch(metadataUrl);
-        if (!res.ok) throw new Error('Failed to fetch metadata');
+        if (!res.ok) throw new Error(window.__i18nErrors?.fetchFail || 'Failed to fetch metadata');
 
         const data = await res.json();
         const files = data.files;
@@ -254,7 +483,7 @@
         const dir = data.dir;
 
         const matches = files.filter(file => file.format?.toUpperCase() === format.toUpperCase());
-        if (matches.length === 0) throw new Error(`No files found for format: ${format}`);
+        if (matches.length === 0) throw new Error((window.__i18nErrors?.noFormatPrefix || 'No files found for format: ') + format);
 
         let m3u = `#EXTM3U\n`;
 
@@ -295,10 +524,11 @@
       } catch (err) {
         errorAlert.textContent = '⚠️ ' + err.message;
         errorAlert.classList.remove('d-none');
+        const resultDiv = document.getElementById('result');
         resultDiv.textContent = '';
       } finally {
         if (!redirect) {
-          loading.classList.add('d-none');
+          document.getElementById('loadingIndicator').classList.add('d-none');
         }
       }
     }
@@ -311,6 +541,7 @@
       return Math.floor(Number(str)) || -1;
     }
 
+    // Copy M3U icon
     document.getElementById('copyM3U').addEventListener('click', () => {
       const content = document.getElementById('result').textContent;
       if (!content.trim()) return;
@@ -319,16 +550,16 @@
         const icon = document.getElementById('copyM3U');
         icon.classList.replace('bi-clipboard', 'bi-clipboard-check');
         icon.classList.replace('text-secondary', 'text-success');
-        icon.title = 'Copied!';
+        icon.title = (i18n[langSelect.value] || i18n.en).copyTitle || 'Copied!';
         setTimeout(() => {
           icon.classList.replace('bi-clipboard-check', 'bi-clipboard');
           icon.classList.replace('text-success', 'text-secondary');
-          icon.title = 'Copy to clipboard';
+          icon.title = (i18n[langSelect.value] || i18n.en).copyTitle || 'Copy to clipboard';
         }, 2000);
       });
     });
 
-    // Handle exclusive audio playback
+    // Exclusive audio playback
     document.addEventListener('play', function (e) {
       const audios = document.querySelectorAll('audio');
       for (const audio of audios) {
@@ -338,7 +569,7 @@
       }
     }, true);
 
-
+    // Auto-generate (redirect) if path is /details/{identifier}
     window.addEventListener('DOMContentLoaded', () => {
       const match = window.location.pathname.match(/^\/details\/(.+)/);
       if (match) {
@@ -346,11 +577,9 @@
         const archiveUrl = `https://archive.org/details/${identifier}`;
         document.getElementById('archiveUrl').value = archiveUrl;
         document.getElementById('formatSelect').value = 'VBR MP3';
-        generateM3U(true); // automatic + redirect
+        generateM3U(true); // automatic + redirect download
       }
     });
-
   </script>
 </body>
-
 </html>
