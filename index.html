@@ -88,9 +88,38 @@
     <!-- Language Switcher -->
     <div class="d-flex justify-content-end">
       <select id="langSelect" class="form-select w-auto mb-3" aria-label="Language switcher">
-        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="ca">Català</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="cs">Čeština</option>
+        <option value="da">Dansk</option>
+        <option value="nl">Nederlands</option>
+        <option value="en" selected>English</option>
+        <option value="fi">Suomi</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="el">Ελληνικά</option>
+        <option value="he">עברית</option>
+        <option value="hi">हिन्दी</option>
+        <option value="hu">Magyar</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="it">Italiano</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="ms">Bahasa Melayu</option>
+        <option value="no">Norsk</option>
+        <option value="pl">Polski</option>
+        <option value="pt">Português</option>
+        <option value="ro">Română</option>
         <option value="ru">Русский</option>
+        <option value="sk">Slovenčina</option>
         <option value="es">Español</option>
+        <option value="sv">Svenska</option>
+        <option value="th">ไทย</option>
+        <option value="tr">Türkçe</option>
+        <option value="uk">Українська</option>
+        <option value="vi">Tiếng Việt</option>
       </select>
     </div>
 
@@ -247,6 +276,7 @@
   </div>
 
   <script>
+
     // ====== Translations ======
     const i18n = {
       en: {
@@ -314,6 +344,1398 @@
         editOnGithub: "Edit this page on GitHub →"
       },
 
+      ar: { // Arabic (RTL)
+        langCode: "ar",
+        metaTitle: "منشئ قوائم M3U لأرشيف الإنترنت وLive Music Archive",
+        metaDesc: "أنشئ قوائم M3U من حفلات أرشيف الإنترنت وتسجيلات Live Music Archive. يدعم MP3 وFLAC وOGG مع المعاينة.",
+        metaKeywords: "مولد m3u, إنشاء m3u لأرشيف الإنترنت, live music archive m3u, إنشاء قائمة flac, مشغل أرشيف الإنترنت, قائمة archive.org",
+        ogTitle: "مولّد M3U لأرشيف الإنترنت",
+        ogDesc: "أنشئ ونزّل فورًا قوائم M3U لعروض وتسجيلات أرشيف الإنترنت. دعم MP3 وFLAC وOGG ومعاينات.",
+        twitterTitle: "مولّد M3U لأرشيف الإنترنت",
+        twitterDesc: "أنشئ قوائم M3U من عناصر أرشيف الإنترنت. اختر التنسيق، عاين، ونزّل خلال ثوانٍ.",
+
+        pageTitle: "منشئ قوائم M3U لأرشيف الإنترنت",
+        aboutHeading: "نبذة عن الخدمة:",
+        aboutBody: `تتيح لك هذه الخدمة المجانية عبر المتصفح إنشاء وتنزيل قوائم M3U فورًا من عناصر
+      <a href="https://archive.org" target="_blank">أرشيف الإنترنت</a> بما في ذلك
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>.
+      الصق رابط العنصر الصحيح، واختر تنسيق الصوت (MP3 أو FLAC أو OGG وغيرها) واحصل على ملف M3U جاهز للبث بنقرة واحدة.`,
+        supportedHeading: "التنسيقات المدعومة:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      سيتم تضمين المقاطع المتوفرة فقط بالتنسيق الذي اخترته.`,
+        howHeading: "كيف تعمل:",
+        howBody: `تتصل الخدمة مباشرةً بواجهة برمجة بيانات أرشيف الإنترنت. لا يستضيف هذا الموقع المحتوى ولا ينسخه؛
+      بل يجلب البيانات المتاحة للعامة وينشئ قائمة M3U وفق اختيارك. يمكنك أيضًا معاينة كل مقطع عبر مشغّل مدمج.`,
+        downloadingHeading: "التنزيل:",
+        downloadingBody: `بعد الإنشاء يمكنك تنزيل قائمتك كملف <code>.m3u</code> قياسي متوافق مع معظم مشغلات الصوت.
+      لا حاجة لحساب أو تسجيل دخول أو تثبيت برنامج.`,
+        privacyHeading: "الخصوصية:",
+        privacyBody: `تجري كل المعالجة داخل متصفحك. لا يخزّن هذا الموقع بياناتك أو يتتبع سجل التشغيل أو التنزيلات.
+      تبقى بياناتك على جهازك.`,
+        contribHeading: "ساهم على GitHub:",
+        contribBody: `المشروع مفتوح المصدر! لتحسينه أو الإبلاغ عن أخطاء أو اقتراح ميزات، زر صفحة المشروع:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "إخلاء المسؤولية:",
+        disclaimerBody: `هذا الموقع واجهة مستقلة لأغراض تعليمية وتسهيلية وغير تابعة لأرشيف الإنترنت.
+      يتم بث جميع المحتويات والروابط مباشرة من <a href="https://archive.org" target="_blank">archive.org</a> ويخضع الاستخدام
+      <a href="https://archive.org/about/terms.php" target="_blank">لشروطهم</a>. لا توجد أي ضمانات. استخدمه على مسؤوليتك والتزم بحقوق النشر والتراخيص.`,
+
+        labelUrl: "أدخل رابط عنصر من أرشيف الإنترنت",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "اختر تنسيق الصوت",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "إنشاء قائمة التشغيل",
+        btnDownload: "تنزيل M3U",
+        loadingText: "جارٍ التحميل...",
+
+        outputTitle: "مخرجات قائمة M3U",
+        previewTitle: "معاينة المقاطع",
+        copyTitle: "نسخ إلى الحافظة",
+
+        errInvalidUrl: "رابط أرشيف الإنترنت غير صالح",
+        errFetch: "فشل في جلب البيانات",
+        errNoFormatPrefix: "لم يتم العثور على ملفات للتنسيق: ",
+
+        editOnGithub: "حرّر هذه الصفحة على GitHub →"
+      },
+
+      ca: {
+        langCode: "ca",
+        metaTitle: "Generador de llistes M3U per a Internet Archive i Live Music Archive",
+        metaDesc: "Crea llistes M3U a partir de concerts d’Internet Archive i gravacions de Live Music Archive. Suporta MP3, FLAC i OGG amb previsualitzacions.",
+        metaKeywords: "generador m3u, crear m3u internet archive, live music archive m3u, llista flac, reproductor internet archive, playlist archive.org",
+        ogTitle: "Generador M3U per a Internet Archive",
+        ogDesc: "Crea i descarrega instantàniament llistes M3U per a concerts i gravacions d’Internet Archive. Compatible amb MP3, FLAC i OGG.",
+        twitterTitle: "Generador M3U per a Internet Archive",
+        twitterDesc: "Genera llistes M3U des d’elements d’Internet Archive amb previsualització i descàrrega en segons.",
+
+        pageTitle: "Creador de llistes M3U d’Internet Archive",
+        aboutHeading: "Sobre aquest servei:",
+        aboutBody: `Aquesta eina gratuïta al navegador et permet crear i descarregar al moment llistes M3U d’elements de
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, inclòs
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Enganxa una URL vàlida,
+      tria el format d’àudio (MP3, FLAC, OGG, etc.) i obtén un fitxer M3U llest per fer streaming amb un clic.`,
+        supportedHeading: "Formats compatibles:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Només s’inclouran les pistes disponibles en el format seleccionat.`,
+        howHeading: "Com funciona:",
+        howBody: `El servei es connecta directament a l’API de metadades d’Internet Archive. El lloc no allotja ni replica contingut;
+      simplement obté metadades públiques i construeix una llista M3U segons la teva selecció. També pots previsualitzar cada pista amb un reproductor integrat.`,
+        downloadingHeading: "Descàrrega:",
+        downloadingBody: `Un cop generada, pots descarregar la teva llista com un fitxer <code>.m3u</code> estàndard compatible amb la majoria de reproductors.
+      No cal compte, inici de sessió ni instal·lació.`,
+        privacyHeading: "Privadesa:",
+        privacyBody: `Tot el processament es fa al teu navegador. Aquest lloc no desa ni rastreja dades, historial de reproducció o descàrregues.
+      Les teves dades no surten del dispositiu.`,
+        contribHeading: "Contribueix a GitHub:",
+        contribBody: `Projecte de codi obert! Si vols millorar-lo, reportar errors o proposar funcions, visita la pàgina del projecte:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Avís legal:",
+        disclaimerBody: `Aquest lloc és una interfície independent creada amb finalitats educatives i de comoditat; no està afiliada ni avalada per Internet Archive.
+      Tot el contingut i els enllaços d’àudio es transmeten directament des de <a href="https://archive.org" target="_blank">archive.org</a> i l’ús es regeix pels seus
+      <a href="https://archive.org/about/terms.php" target="_blank">Termes d’ús</a>. Sense garanties. Usa’l sota la teva responsabilitat i respecta els drets d’autor.`,
+
+        labelUrl: "Introdueix la URL de l’element d’Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Selecciona el format d’àudio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Genera la llista",
+        btnDownload: "Descarrega M3U",
+        loadingText: "Carregant...",
+
+        outputTitle: "Sortida de la llista M3U",
+        previewTitle: "Previsualització de pistes",
+        copyTitle: "Copia al porta-retalls",
+
+        errInvalidUrl: "URL d’Internet Archive no vàlida",
+        errFetch: "No s’han pogut obtenir les metadades",
+        errNoFormatPrefix: "No s’han trobat fitxers per al format: ",
+
+        editOnGithub: "Edita aquesta pàgina a GitHub →"
+      },
+
+      "zh-CN": {
+        langCode: "zh-CN",
+        metaTitle: "Internet Archive 与 Live Music Archive 的 M3U 播放列表生成器",
+        metaDesc: "从 Internet Archive 演出与 Live Music Archive 录音生成 M3U 播放列表。支持 MP3、FLAC、OGG，提供预览。",
+        metaKeywords: "m3u 生成器, internet archive m3u, live music archive, flac 播放列表, archive.org 播放器",
+        ogTitle: "Internet Archive M3U 生成器",
+        ogDesc: "为 Internet Archive 的演出与录音即时创建并下载 M3U 列表，支持 MP3/FLAC/OGG。",
+        twitterTitle: "Internet Archive M3U 生成器",
+        twitterDesc: "从 Internet Archive 条目生成 M3U 列表，选择格式、预览并一键下载。",
+
+        pageTitle: "Internet Archive M3U 播放列表生成器",
+        aboutHeading: "关于本服务：",
+        aboutBody: `这款免费浏览器工具可从
+      <a href="https://archive.org" target="_blank">Internet Archive</a> 条目（含
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>）即时生成并下载 M3U 播放列表。
+      粘贴有效链接，选择音频格式（MP3、FLAC、OGG 等），一键生成可流式播放的 M3U 文件。`,
+        supportedHeading: "支持的格式：",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      仅包含所选格式下可用的曲目。`,
+        howHeading: "工作原理：",
+        howBody: `服务直接连接 Internet Archive 元数据 API。本网站不托管或镜像任何内容；
+      仅获取公开元数据并按选择构建 M3U 播放列表。你也可以使用内置播放器预览每首曲目。`,
+        downloadingHeading: "下载：",
+        downloadingBody: `生成后，你可以将播放列表下载为标准 <code>.m3u</code> 文件，兼容大多数播放器。
+      无需账号登录或安装软件。`,
+        privacyHeading: "隐私：",
+        privacyBody: `所有处理均在你的浏览器内完成。本站不存储或跟踪你的输入、播放历史或下载文件。
+      你的数据仅保留在本地设备。`,
+        contribHeading: "在 GitHub 参与贡献：",
+        contribBody: `本项目开源！欢迎改进、报错或提功能需求：<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "免责声明：",
+        disclaimerBody: `本网站为独立工具，与 Internet Archive 无关亦未获其背书。
+      所有音频内容与链接均直接来自 <a href="https://archive.org" target="_blank">archive.org</a>，
+      使用受其 <a href="https://archive.org/about/terms.php" target="_blank">使用条款</a> 约束。概不提供任何保证，请自行承担风险并遵守版权许可。`,
+
+        labelUrl: "输入 Internet Archive 条目链接",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "选择音频格式",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "生成播放列表",
+        btnDownload: "下载 M3U",
+        loadingText: "加载中…",
+
+        outputTitle: "M3U 播放列表输出",
+        previewTitle: "曲目预览",
+        copyTitle: "复制到剪贴板",
+
+        errInvalidUrl: "无效的 Archive 链接",
+        errFetch: "获取元数据失败",
+        errNoFormatPrefix: "未找到此格式的文件：",
+
+        editOnGithub: "在 GitHub 编辑此页面 →"
+      },
+
+      "zh-TW": {
+        langCode: "zh-TW",
+        metaTitle: "Internet Archive 與 Live Music Archive 的 M3U 播放清單產生器",
+        metaDesc: "從 Internet Archive 演出與 Live Music Archive 錄音建立 M3U 播放清單。支援 MP3、FLAC、OGG，提供預覽。",
+        metaKeywords: "m3u 產生器, internet archive m3u, live music archive, flac 清單, archive.org 播放器",
+        ogTitle: "Internet Archive M3U 產生器",
+        ogDesc: "立即為 Internet Archive 的演出與錄音建立並下載 M3U 清單，支援 MP3/FLAC/OGG。",
+        twitterTitle: "Internet Archive M3U 產生器",
+        twitterDesc: "從 Internet Archive 項目產生 M3U 清單，選擇格式、預覽並一鍵下載。",
+
+        pageTitle: "Internet Archive M3U 播放清單產生器",
+        aboutHeading: "關於本服務：",
+        aboutBody: `這款免費瀏覽器工具可從
+      <a href="https://archive.org" target="_blank">Internet Archive</a> 項目（含
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>）即時產生並下載 M3U 播放清單。
+      貼上有效連結，選擇音訊格式（MP3、FLAC、OGG 等），一鍵生成可串流播放的 M3U。`,
+        supportedHeading: "支援的格式：",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      只會包含所選格式下可用的曲目。`,
+        howHeading: "運作方式：",
+        howBody: `服務直接連接 Internet Archive 中繼資料 API。本網站不託管或鏡像內容；
+      僅取得公開中繼資料並依你的選擇建立 M3U。你也可用內建播放器預覽各曲目。`,
+        downloadingHeading: "下載：",
+        downloadingBody: `生成後可下載標準 <code>.m3u</code> 檔案，與多數播放器相容。
+      無須帳號或安裝軟體。`,
+        privacyHeading: "隱私：",
+        privacyBody: `所有處理都在你的瀏覽器中完成。本站不儲存或追蹤你的輸入、播放歷史或下載檔案。
+      你的資料僅保留在裝置上。`,
+        contribHeading: "在 GitHub 貢獻：",
+        contribBody: `本專案為開源！歡迎改進、回報問題或提案功能：<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "免責聲明：",
+        disclaimerBody: `本網站為獨立工具，與 Internet Archive 無關亦未獲其背書。
+      所有音訊內容與連結均直接來自 <a href="https://archive.org" target="_blank">archive.org</a>，
+      使用受其 <a href="https://archive.org/about/terms.php" target="_blank">使用條款</a> 約束。不提供任何保證；使用風險自負並遵守版權與授權。`,
+
+        labelUrl: "輸入 Internet Archive 項目連結",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "選擇音訊格式",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "產生播放清單",
+        btnDownload: "下載 M3U",
+        loadingText: "載入中…",
+
+        outputTitle: "M3U 播放清單輸出",
+        previewTitle: "曲目預覽",
+        copyTitle: "複製到剪貼簿",
+
+        errInvalidUrl: "無效的 Archive 連結",
+        errFetch: "取得中繼資料失敗",
+        errNoFormatPrefix: "找不到此格式的檔案：",
+
+        editOnGithub: "在 GitHub 編輯此頁 →"
+      },
+
+      cs: {
+        langCode: "cs",
+        metaTitle: "Generátor M3U playlistů pro Internet Archive a Live Music Archive",
+        metaDesc: "Vytvářejte M3U playlisty z koncertů Internet Archive a nahrávek Live Music Archive. Podpora MP3, FLAC, OGG s náhledem.",
+        metaKeywords: "m3u generátor, internet archive m3u, live music archive m3u, flac playlist, archive.org přehrávač",
+        ogTitle: "Generátor M3U pro Internet Archive",
+        ogDesc: "Okamžitě vytvářejte a stahujte M3U playlisty pro koncerty a nahrávky na Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "Generátor M3U pro Internet Archive",
+        twitterDesc: "Generujte M3U z položek Internet Archive. Zvolte formát, náhled a stáhněte během sekund.",
+
+        pageTitle: "Tvořič M3U playlistů pro Internet Archive",
+        aboutHeading: "O službě:",
+        aboutBody: `Tato bezplatná webová služba vám umožní okamžitě vytvářet a stahovat M3U playlisty z položek
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, včetně
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Vložte platnou adresu,
+      vyberte formát (MP3, FLAC, OGG atd.) a získejte M3U připravené pro stream jedním klikem.`,
+        supportedHeading: "Podporované formáty:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Zahrnuty budou pouze skladby dostupné ve zvoleném formátu.`,
+        howHeading: "Jak to funguje:",
+        howBody: `Služba se napojuje přímo na metadata API Internet Archive. Web nehostuje ani nereplikuje obsah;
+      pouze získá veřejná metadata a vytvoří M3U podle vašeho výběru. Skladby si můžete také přehrát v integrovaném přehrávači.`,
+        downloadingHeading: "Stahování:",
+        downloadingBody: `Po vygenerování lze playlist stáhnout jako standardní <code>.m3u</code>, kompatibilní s většinou přehrávačů.
+      Není potřeba účet ani instalace.`,
+        privacyHeading: "Soukromí:",
+        privacyBody: `Veškeré zpracování probíhá ve vašem prohlížeči. Web neukládá vaše údaje ani nesleduje historii přehrávání či stahování.
+      Vaše data zůstávají ve vašem zařízení.`,
+        contribHeading: "Přispějte na GitHubu:",
+        contribBody: `Projekt je open‑source! Chcete-li jej zlepšit, nahlásit chyby nebo navrhnout funkce, navštivte stránku projektu:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Prohlášení:",
+        disclaimerBody: `Tento web je nezávislé rozhraní určené pro pohodlí a vzdělávání, není spojeno s Internet Archive.
+      Veškerý audio obsah a odkazy se streamují přímo z <a href="https://archive.org" target="_blank">archive.org</a>;
+      použití se řídí jejich <a href="https://archive.org/about/terms.php" target="_blank">podmínkami</a>. Bez záruk.`,
+
+        labelUrl: "Zadejte URL položky Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Vyberte audio formát",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Vygenerovat playlist",
+        btnDownload: "Stáhnout M3U",
+        loadingText: "Načítání...",
+
+        outputTitle: "Výstup playlistu M3U",
+        previewTitle: "Náhled skladeb",
+        copyTitle: "Kopírovat do schránky",
+
+        errInvalidUrl: "Neplatná adresa Archive",
+        errFetch: "Nepodařilo se získat metadata",
+        errNoFormatPrefix: "Nebyly nalezeny soubory pro formát: ",
+
+        editOnGithub: "Upravit tuto stránku na GitHubu →"
+      },
+
+      da: {
+        langCode: "da",
+        metaTitle: "M3U-playlistgenerator til Internet Archive og Live Music Archive",
+        metaDesc: "Opret M3U-playlister fra Internet Archive-koncerter og Live Music Archive-optagelser. Understøtter MP3, FLAC og OGG med forhåndsvisning.",
+        metaKeywords: "m3u generator, internet archive m3u, live music archive, flac playliste, archive.org afspiller",
+        ogTitle: "M3U-generator til Internet Archive",
+        ogDesc: "Opret og download straks M3U-playlister til koncerter og optagelser på Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "M3U-generator til Internet Archive",
+        twitterDesc: "Generér M3U fra Internet Archive-elementer – vælg format, forhåndsvis og download på få sekunder.",
+
+        pageTitle: "Internet Archive M3U-playlistbygger",
+        aboutHeading: "Om denne tjeneste:",
+        aboutBody: `Denne gratis browserbaserede tjeneste lader dig straks oprette og downloade M3U-playlister fra
+      <a href="https://archive.org" target="_blank">Internet Archive</a>-elementer, inkl.
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Indsæt en gyldig URL,
+      vælg lydformat (MP3, FLAC, OGG osv.), og få en M3U klar til streaming med ét klik.`,
+        supportedHeading: "Understøttede formater:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Kun spor, der findes i det valgte format, medtages.`,
+        howHeading: "Sådan fungerer det:",
+        howBody: `Tjenesten forbinder direkte til Internet Archives metadata-API. Sitet hoster ikke eller spejler indhold;
+      det henter offentlige metadata og bygger en M3U ud fra dit valg. Du kan også forhåndsvise hvert spor i en indbygget afspiller.`,
+        downloadingHeading: "Download:",
+        downloadingBody: `Når listen er oprettet, kan den hentes som en standard <code>.m3u</code>-fil, kompatibel med de fleste afspillere.
+      Ingen konto, login eller installation kræves.`,
+        privacyHeading: "Privatliv:",
+        privacyBody: `Al behandling foregår i din browser. Sitet gemmer eller sporer ikke input, afspilningshistorik eller downloads.
+      Dine data forlader ikke enheden.`,
+        contribHeading: "Bidrag på GitHub:",
+        contribBody: `Projektet er open source! Hvis du vil forbedre det, rapportere fejl eller foreslå funktioner, besøg projektets side:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Ansvarsfraskrivelse:",
+        disclaimerBody: `Dette site er et uafhængigt værktøj til bekvemmelighed og læring og er ikke tilknyttet eller godkendt af Internet Archive.
+      Alt lydindhold og alle links streames direkte fra <a href="https://archive.org" target="_blank">archive.org</a> og er underlagt deres
+      <a href="https://archive.org/about/terms.php" target="_blank">vilkår</a>. Ingen garantier.`,
+
+        labelUrl: "Indtast Internet Archive-elementets URL",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Vælg lydformat",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Opret playliste",
+        btnDownload: "Download M3U",
+        loadingText: "Indlæser...",
+
+        outputTitle: "M3U-playliste-output",
+        previewTitle: "Sporforhåndsvisning",
+        copyTitle: "Kopiér til udklipsholder",
+
+        errInvalidUrl: "Ugyldig Archive-URL",
+        errFetch: "Kunne ikke hente metadata",
+        errNoFormatPrefix: "Ingen filer fundet for format: ",
+
+        editOnGithub: "Redigér denne side på GitHub →"
+      },
+
+      nl: {
+        langCode: "nl",
+        metaTitle: "M3U-afspeellijstgenerator voor Internet Archive en Live Music Archive",
+        metaDesc: "Maak M3U-afspeellijsten van Internet Archive-concerten en Live Music Archive-opnames. Ondersteunt MP3, FLAC en OGG met preview.",
+        metaKeywords: "m3u generator, internet archive m3u, live music archive m3u, flac afspeellijst, archive.org speler",
+        ogTitle: "M3U-generator voor Internet Archive",
+        ogDesc: "Maak en download direct M3U-lijsten voor concerten en opnames op Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "M3U-generator voor Internet Archive",
+        twitterDesc: "Genereer M3U vanuit Internet Archive-items. Kies formaat, bekijk voorvertoning en download in seconden.",
+
+        pageTitle: "Internet Archive M3U-afspeellijstbouwer",
+        aboutHeading: "Over deze service:",
+        aboutBody: `Met deze gratis browsertool kun je direct M3U-afspeellijsten maken en downloaden uit
+      <a href="https://archive.org" target="_blank">Internet Archive</a>-items, waaronder
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Plak een geldige URL,
+      kies het audioformaat (MP3, FLAC, OGG, enz.) en ontvang een volledig M3U-bestand voor streaming met één klik.`,
+        supportedHeading: "Ondersteunde formaten:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Alleen beschikbare nummers in het gekozen formaat worden opgenomen.`,
+        howHeading: "Hoe het werkt:",
+        howBody: `De service maakt direct verbinding met de metadata-API van Internet Archive. De site host of spiegelt geen content;
+      hij haalt openbare metadata op en bouwt op basis daarvan een M3U. Je kunt elk nummer ook vooraf beluisteren via de ingebouwde speler.`,
+        downloadingHeading: "Downloaden:",
+        downloadingBody: `Na het genereren kun je de lijst downloaden als een standaard <code>.m3u</code>-bestand dat met de meeste spelers werkt.
+      Geen account, inlog of installatie nodig.`,
+        privacyHeading: "Privacy:",
+        privacyBody: `Alle verwerking gebeurt in je browser. Deze site slaat je invoer, afspeelgeschiedenis en downloads niet op en volgt die ook niet.
+      Je data blijft op je apparaat.`,
+        contribHeading: "Draag bij op GitHub:",
+        contribBody: `Dit is open source! Wil je helpen verbeteren, bugs melden of functies voorstellen? Bezoek de projectpagina:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Disclaimer:",
+        disclaimerBody: `Deze site is een onafhankelijk hulpmiddel voor gemak en educatie en is niet gelieerd aan of goedgekeurd door Internet Archive.
+      Alle audio en links worden rechtstreeks gestreamd vanaf <a href="https://archive.org" target="_blank">archive.org</a> en het gebruik valt onder hun
+      <a href="https://archive.org/about/terms.php" target="_blank">gebruiksvoorwaarden</a>. Geen garanties.`,
+
+        labelUrl: "Voer de URL van het Internet Archive-item in",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Selecteer audioformaat",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Afspeellijst genereren",
+        btnDownload: "M3U downloaden",
+        loadingText: "Laden...",
+
+        outputTitle: "M3U-uitvoer",
+        previewTitle: "Nummers previewen",
+        copyTitle: "Kopiëren naar klembord",
+
+        errInvalidUrl: "Ongeldige Archive-URL",
+        errFetch: "Ophalen van metadata mislukt",
+        errNoFormatPrefix: "Geen bestanden gevonden voor formaat: ",
+
+        editOnGithub: "Bewerk deze pagina op GitHub →"
+      },
+
+      fi: {
+        langCode: "fi",
+        metaTitle: "M3U-soittolistageneraattori Internet Archivelle ja Live Music Archivelle",
+        metaDesc: "Luo M3U-soittolistoja Internet Archiven konserteista ja Live Music Archiven tallenteista. Tuki MP3, FLAC, OGG ja esikatselut.",
+        metaKeywords: "m3u generaattori, internet archive m3u, live music archive m3u, flac soittolista, archive.org soitin",
+        ogTitle: "M3U-generaattori Internet Archivelle",
+        ogDesc: "Luo ja lataa heti M3U-soittolistat Internet Archiven konserteille ja tallenteille. MP3/FLAC/OGG.",
+        twitterTitle: "M3U-generaattori Internet Archivelle",
+        twitterDesc: "Luo M3U-soittolistoja Internet Archiven kohteista – valitse formaatti, esikatsele ja lataa sekunneissa.",
+
+        pageTitle: "Internet Archive M3U -soittolistatyökalu",
+        aboutHeading: "Tietoa palvelusta:",
+        aboutBody: `Tämä ilmainen selainpohjainen työkalu luo ja lataa välittömästi M3U-soittolistoja
+      <a href="https://archive.org" target="_blank">Internet Archiven</a> kohteista, mukaan lukien
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Liitä kelvollinen URL,
+      valitse ääniformaatti (MP3, FLAC, OGG jne.) ja saat yhdellä napsautuksella M3U-tiedoston suoratoistoon.`,
+        supportedHeading: "Tuetut formaatit:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Vain valitussa formaatissa saatavilla olevat raidat sisällytetään.`,
+        howHeading: "Miten se toimii:",
+        howBody: `Palvelu yhdistyy suoraan Internet Archiven metadata-rajapintaan. Sivusto ei isännöi tai peilaa sisältöä;
+      se hakee julkiset metatiedot ja rakentaa M3U-soittolistan valintasi perusteella. Voit myös esikuunnella jokaisen raidan sisäisellä soittimella.`,
+        downloadingHeading: "Lataus:",
+        downloadingBody: `Luomisen jälkeen soittolista voidaan ladata standardina <code>.m3u</code>-tiedostona, joka toimii useimpien soittimien kanssa.
+      Ei tiliä tai asennusta.`,
+        privacyHeading: "Tietosuoja:",
+        privacyBody: `Kaikki käsittely tapahtuu selaimessasi. Sivusto ei tallenna tai seuraa syötteitäsi, toistohistoriaasi tai latauksiasi.
+      Tietosi pysyvät laitteellasi.`,
+        contribHeading: "Osallistu GitHubissa:",
+        contribBody: `Hanke on avoimen lähdekoodin! Jos haluat parantaa sitä, ilmoittaa virheistä tai ehdottaa ominaisuuksia, vieraile projektisivulla:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Vastuuvapauslauseke:",
+        disclaimerBody: `Tämä sivusto on itsenäinen käyttöliittymä eikä liity Internet Archiveen. Kaikki audiolinkit streamataan suoraan
+      <a href="https://archive.org" target="_blank">archive.org</a>-palvelusta, ja käyttöön sovelletaan heidän
+      <a href="https://archive.org/about/terms.php" target="_blank">käyttöehtojaan</a>. Ei takuita.`,
+
+        labelUrl: "Anna Internet Archive -kohteen URL",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Valitse ääniformaatti",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Luo soittolista",
+        btnDownload: "Lataa M3U",
+        loadingText: "Ladataan...",
+
+        outputTitle: "M3U-soittolistan tuloste",
+        previewTitle: "Raitojen esikatselu",
+        copyTitle: "Kopioi leikepöydälle",
+
+        errInvalidUrl: "Virheellinen Archive-URL",
+        errFetch: "Metatietojen haku epäonnistui",
+        errNoFormatPrefix: "Tiedostoja ei löytynyt formaatille: ",
+
+        editOnGithub: "Muokkaa tätä sivua GitHubissa →"
+      },
+
+      fr: {
+        langCode: "fr",
+        metaTitle: "Générateur de playlists M3U pour Internet Archive et Live Music Archive",
+        metaDesc: "Créez des playlists M3U à partir des concerts d’Internet Archive et des enregistrements Live Music Archive. Prise en charge MP3, FLAC, OGG avec aperçu.",
+        metaKeywords: "générateur m3u, internet archive m3u, live music archive, playlist flac, lecteur archive.org",
+        ogTitle: "Générateur M3U pour Internet Archive",
+        ogDesc: "Créez et téléchargez instantanément des playlists M3U pour les concerts et enregistrements d’Internet Archive.",
+        twitterTitle: "Générateur M3U pour Internet Archive",
+        twitterDesc: "Générez des M3U depuis les éléments d’Internet Archive. Choisissez le format, prévisualisez et téléchargez en quelques secondes.",
+
+        pageTitle: "Créateur de playlists M3U pour Internet Archive",
+        aboutHeading: "À propos du service :",
+        aboutBody: `Cet outil gratuit dans le navigateur permet de générer et télécharger instantanément des playlists M3U à partir d’éléments
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, y compris
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Collez une URL valide,
+      choisissez le format audio (MP3, FLAC, OGG, etc.) et obtenez un fichier M3U prêt pour le streaming en un clic.`,
+        supportedHeading: "Formats pris en charge :",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Seules les pistes disponibles dans le format choisi seront incluses.`,
+        howHeading: "Fonctionnement :",
+        howBody: `Le service se connecte directement à l’API des métadonnées d’Internet Archive. Le site n’héberge ni ne duplique le contenu ;
+      il récupère des métadonnées publiques et construit une M3U selon votre sélection. Vous pouvez aussi préécouter chaque piste via le lecteur intégré.`,
+        downloadingHeading: "Téléchargement :",
+        downloadingBody: `Une fois générée, la playlist peut être téléchargée au format <code>.m3u</code>, compatible avec la plupart des lecteurs.
+      Aucun compte, connexion ou installation requis.`,
+        privacyHeading: "Confidentialité :",
+        privacyBody: `Tout le traitement s’effectue dans votre navigateur. Ce site ne stocke ni ne piste vos entrées, votre historique de lecture ou vos téléchargements.
+      Vos données restent sur votre appareil.`,
+        contribHeading: "Contribuer sur GitHub :",
+        contribBody: `Projet open source ! Pour l’améliorer, signaler des bugs ou proposer des idées, rendez-vous sur la page du projet :<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Avertissement :",
+        disclaimerBody: `Ce site est une interface indépendante créée à des fins pratiques et éducatives ; il n’est ni affilié ni approuvé par Internet Archive.
+      Tous les contenus et liens audio sont diffusés directement depuis <a href="https://archive.org" target="_blank">archive.org</a> et soumis à leurs
+      <a href="https://archive.org/about/terms.php" target="_blank">conditions d’utilisation</a>. Sans garantie.`,
+
+        labelUrl: "Saisissez l’URL d’un élément Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Sélectionnez le format audio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Générer la playlist",
+        btnDownload: "Télécharger le M3U",
+        loadingText: "Chargement…",
+
+        outputTitle: "Sortie de la playlist M3U",
+        previewTitle: "Aperçu des pistes",
+        copyTitle: "Copier dans le presse‑papiers",
+
+        errInvalidUrl: "URL d’Archive invalide",
+        errFetch: "Échec de récupération des métadonnées",
+        errNoFormatPrefix: "Aucun fichier trouvé pour le format : ",
+
+        editOnGithub: "Modifier cette page sur GitHub →"
+      },
+
+      de: {
+        langCode: "de",
+        metaTitle: "M3U-Playlist‑Generator für Internet Archive & Live Music Archive",
+        metaDesc: "Erstellen Sie M3U‑Playlists aus Internet‑Archive‑Konzerten und Live Music Archive‑Aufnahmen. Unterstützt MP3, FLAC und OGG mit Vorschau.",
+        metaKeywords: "m3u generator, internet archive m3u, live music archive, flac playlist, archive.org player",
+        ogTitle: "M3U‑Generator für Internet Archive",
+        ogDesc: "Erstellen und laden Sie sofort M3U‑Playlists für Konzerte und Aufnahmen im Internet Archive herunter.",
+        twitterTitle: "M3U‑Generator für Internet Archive",
+        twitterDesc: "Erzeugen Sie M3U aus Internet‑Archive‑Einträgen – Format wählen, vorhören, herunterladen.",
+
+        pageTitle: "Internet Archive M3U‑Playlist‑Builder",
+        aboutHeading: "Über diesen Dienst:",
+        aboutBody: `Dieses kostenlose Browser‑Tool erstellt und lädt sofort M3U‑Playlists aus
+      <a href="https://archive.org" target="_blank">Internet Archive</a>‑Einträgen – inklusive
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Fügen Sie eine gültige URL ein,
+      wählen Sie das Audioformat (MP3, FLAC, OGG etc.) und erhalten Sie eine M3U für Streaming mit einem Klick.`,
+        supportedHeading: "Unterstützte Formate:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Nur in Ihrem gewählten Format verfügbare Titel werden aufgenommen.`,
+        howHeading: "Funktionsweise:",
+        howBody: `Der Dienst verbindet sich direkt mit der Metadata‑API von Internet Archive. Diese Website hostet oder spiegelt keine Inhalte;
+      sie ruft öffentliche Metadaten ab und erstellt daraus eine M3U. Sie können jeden Track im integrierten Player vorhören.`,
+        downloadingHeading: "Download:",
+        downloadingBody: `Nach der Erstellung kann die Playlist als <code>.m3u</code> heruntergeladen werden – kompatibel mit den meisten Playern.
+      Kein Konto oder Installation nötig.`,
+        privacyHeading: "Datenschutz:",
+        privacyBody: `Die Verarbeitung erfolgt ausschließlich in Ihrem Browser. Diese Website speichert oder verfolgt keine Eingaben, Wiedergabeverläufe oder Downloads.
+      Ihre Daten verbleiben auf Ihrem Gerät.`,
+        contribHeading: "Auf GitHub mitwirken:",
+        contribBody: `Open Source! Wenn Sie verbessern, Bugs melden oder Features vorschlagen möchten, besuchen Sie die Projektseite:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Haftungsausschluss:",
+        disclaimerBody: `Diese Website ist ein unabhängiges Tool und steht in keiner Verbindung zu Internet Archive.
+      Alle Audioinhalte und Links werden direkt von <a href="https://archive.org" target="_blank">archive.org</a> gestreamt und unterliegen deren
+      <a href="https://archive.org/about/terms.php" target="_blank">Nutzungsbedingungen</a>. Ohne Gewähr.`,
+
+        labelUrl: "Internet‑Archive‑URL eingeben",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Audioformat auswählen",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Playlist erstellen",
+        btnDownload: "M3U herunterladen",
+        loadingText: "Laden…",
+
+        outputTitle: "M3U‑Playlista usgabe",
+        previewTitle: "Track‑Vorschau",
+        copyTitle: "In die Zwischenablage kopieren",
+
+        errInvalidUrl: "Ungültige Archive‑URL",
+        errFetch: "Metadaten konnten nicht geladen werden",
+        errNoFormatPrefix: "Keine Dateien für Format gefunden: ",
+
+        editOnGithub: "Diese Seite auf GitHub bearbeiten →"
+      },
+
+      el: {
+        langCode: "el",
+        metaTitle: "Δημιουργός λιστών M3U για Internet Archive & Live Music Archive",
+        metaDesc: "Δημιουργήστε λίστες M3U από συναυλίες του Internet Archive και ηχογραφήσεις του Live Music Archive. Υποστηρίζει MP3, FLAC, OGG με προεπισκόπηση.",
+        metaKeywords: "m3u δημιουργός, internet archive m3u, live music archive, flac λίστα, archive.org player",
+        ogTitle: "Δημιουργός M3U για Internet Archive",
+        ogDesc: "Δημιουργήστε και κατεβάστε άμεσα λίστες M3U για συναυλίες και ηχογραφήσεις στο Internet Archive.",
+        twitterTitle: "Δημιουργός M3U για Internet Archive",
+        twitterDesc: "Παράγετε M3U από στοιχεία του Internet Archive — επιλέξτε μορφή, προεπισκόπηση, λήψη.",
+
+        pageTitle: "Κατασκευαστής λίστας M3U για Internet Archive",
+        aboutHeading: "Σχετικά με την υπηρεσία:",
+        aboutBody: `Αυτό το δωρεάν εργαλείο περιηγητή σάς επιτρέπει να δημιουργείτε και να κατεβάζετε άμεσα λίστες M3U από στοιχεία του
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, συμπεριλαμβανομένου του
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Επικολλήστε έγκυρο URL,
+      επιλέξτε μορφή ήχου (MP3, FLAC, OGG κ.λπ.) και πάρτε ένα έτοιμο M3U για streaming με ένα κλικ.`,
+        supportedHeading: "Υποστηριζόμενες μορφές:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Περιλαμβάνονται μόνο τα κομμάτια που είναι διαθέσιμα στη μορφή που επιλέγετε.`,
+        howHeading: "Πώς λειτουργεί:",
+        howBody: `Η υπηρεσία συνδέεται απευθείας στο API μεταδεδομένων του Internet Archive. Ο ιστότοπος δεν φιλοξενεί ούτε αντιγράφει περιεχόμενο·
+      ανακτά δημόσια μεταδεδομένα και δημιουργεί M3U με βάση την επιλογή σας. Μπορείτε επίσης να κάνετε προεπισκόπηση κάθε κομματιού.`,
+        downloadingHeading: "Λήψη:",
+        downloadingBody: `Μετά τη δημιουργία, μπορείτε να κατεβάσετε τη λίστα ως τυπικό αρχείο <code>.m3u</code> συμβατό με τους περισσότερους αναπαραγωγείς.`,
+        privacyHeading: "Ιδιωτικότητα:",
+        privacyBody: `Όλη η επεξεργασία γίνεται στο πρόγραμμα περιήγησής σας. Ο ιστότοπος δεν αποθηκεύει/παρακολουθεί δεδομένα, ιστορικό αναπαραγωγών ή λήψεις.`,
+        contribHeading: "Συνεισφέρετε στο GitHub:",
+        contribBody: `Ανοικτού κώδικα! Για βελτιώσεις/αναφορές/ιδέες, δείτε τη σελίδα του έργου:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Αποποίηση ευθύνης:",
+        disclaimerBody: `Ανεξάρτητο εργαλείο, δεν σχετίζεται με Internet Archive. Όλο το περιεχόμενο μεταδίδεται από
+      <a href="https://archive.org" target="_blank">archive.org</a> και υπόκειται στους
+      <a href="https://archive.org/about/terms.php" target="_blank">όρους χρήσης</a>. Χωρίς εγγυήσεις.`,
+
+        labelUrl: "Εισαγάγετε URL στοιχείου του Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Επιλέξτε μορφή ήχου",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Δημιουργία λίστας",
+        btnDownload: "Λήψη M3U",
+        loadingText: "Φόρτωση...",
+
+        outputTitle: "Έξοδος λίστας M3U",
+        previewTitle: "Προεπισκόπηση κομματιών",
+        copyTitle: "Αντιγραφή στο πρόχειρο",
+
+        errInvalidUrl: "Μη έγκυρο URL",
+        errFetch: "Αποτυχία λήψης μεταδεδομένων",
+        errNoFormatPrefix: "Δεν βρέθηκαν αρχεία για τη μορφή: ",
+
+        editOnGithub: "Επεξεργασία σελίδας στο GitHub →"
+      },
+
+      he: { // Hebrew (RTL)
+        langCode: "he",
+        metaTitle: "יוצר פלייליסטים M3U ל‑Internet Archive ו‑Live Music Archive",
+        metaDesc: "יצירת פלייליסטים M3U מהופעות ב‑Internet Archive והקלטות Live Music Archive. תמיכה ב‑MP3, FLAC, OGG עם תצוגה מקדימה.",
+        metaKeywords: "יוצר m3u, internet archive m3u, live music archive, פלייליסט flac, נגן archive.org",
+        ogTitle: "יוצר M3U ל‑Internet Archive",
+        ogDesc: "צור והורד מיידית פלייליסטי M3U להופעות והקלטות ב‑Internet Archive.",
+        twitterTitle: "יוצר M3U ל‑Internet Archive",
+        twitterDesc: "צור M3U מפריטי Internet Archive — בחר פורמט, תצוגה מקדימה והורדה.",
+
+        pageTitle: "בונה פלייליסטים M3U ל‑Internet Archive",
+        aboutHeading: "על השירות:",
+        aboutBody: `כלי דפדפן חינמי ליצירה והורדה מיידית של פלייליסטים M3U מפריטי
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, כולל
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. הדבק קישור תקין,
+      בחר פורמט שמע (MP3, FLAC, OGG ועוד) וקבל קובץ M3U מוכן להזנה בלחיצה.`,
+        supportedHeading: "פורמטים נתמכים:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      רק רצועות הזמינות בפורמט הנבחר ייכללו.`,
+        howHeading: "כיצד זה עובד:",
+        howBody: `השירות מתחבר ישירות ל‑API של מטא‑דאטה של Internet Archive. האתר אינו מאחסן או משכפל תוכן;
+      הוא מאחזר מטא‑דאטה ציבורית ויוצר פלייליסט M3U בהתאם לבחירתך. ניתן גם להציג תצוגה מקדימה לכל רצועה.`,
+        downloadingHeading: "הורדה:",
+        downloadingBody: `לאחר יצירה ניתן להוריד את הפלייליסט כקובץ <code>.m3u</code> סטנדרטי התואם לרוב הנגנים.
+      ללא חשבון או התקנה.`,
+        privacyHeading: "פרטיות:",
+        privacyBody: `כל העיבוד מתבצע בדפדפן שלך. האתר אינו שומר או עוקב אחר קלט, היסטוריית השמעה או הורדות.
+      הנתונים נשארים במכשיר שלך.`,
+        contribHeading: "תרום ב‑GitHub:",
+        contribBody: `קוד פתוח! לשיפור, דיווח תקלות או הצעות – בקר בדף הפרויקט:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "כתב ויתור:",
+        disclaimerBody: `האתר הוא ממשק עצמאי שאינו מזוהה או מאושר על ידי Internet Archive.
+      כל התוכן והקישורים מוזרמים ישירות מ‑<a href="https://archive.org" target="_blank">archive.org</a> וכפופים
+      <a href="https://archive.org/about/terms.php" target="_blank">לתנאי השימוש</a> שלהם.`,
+
+        labelUrl: "הזן קישור לפריט ב‑Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "בחר פורמט שמע",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "יצירת פלייליסט",
+        btnDownload: "הורד M3U",
+        loadingText: "טוען...",
+
+        outputTitle: "פלט פלייליסט M3U",
+        previewTitle: "תצוגה מקדימה של רצועות",
+        copyTitle: "העתקה ללוח",
+
+        errInvalidUrl: "קישור Archive לא תקין",
+        errFetch: "כשל באחזור מטא‑דאטה",
+        errNoFormatPrefix: "לא נמצאו קבצים בפורמט: ",
+
+        editOnGithub: "עריכת העמוד ב‑GitHub →"
+      },
+
+      hi: {
+        langCode: "hi",
+        metaTitle: "Internet Archive और Live Music Archive के लिए M3U प्लेलिस्ट जनरेटर",
+        metaDesc: "Internet Archive कॉन्सर्ट और Live Music Archive रिकॉर्डिंग से M3U प्लेलिस्ट बनाएं। MP3, FLAC, OGG सपोर्ट और प्रीव्यू।",
+        metaKeywords: "m3u जनरेटर, internet archive m3u, live music archive m3u, flac प्लेलिस्ट, archive.org प्लेयर",
+        ogTitle: "Internet Archive के लिए M3U जनरेटर",
+        ogDesc: "Internet Archive के कॉन्सर्ट और रिकॉर्डिंग के लिए तुरंत M3U प्लेलिस्ट बनाएँ और डाउनलोड करें।",
+        twitterTitle: "Internet Archive के लिए M3U जनरेटर",
+        twitterDesc: "Internet Archive आइटम से M3U बनाएँ — फ़ॉर्मैट चुनें, प्रीव्यू करें, सेकंडों में डाउनलोड करें।",
+
+        pageTitle: "Internet Archive M3U प्लेलिस्ट बिल्डर",
+        aboutHeading: "सेवा के बारे में:",
+        aboutBody: `यह निःशुल्क ब्राउज़र‑आधारित सेवा
+      <a href="https://archive.org" target="_blank">Internet Archive</a> (सहित
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>) की प्रविष्टियों से तत्काल M3U प्लेलिस्ट बनाती और डाउनलोड कराती है।
+      वैध URL पेस्ट करें, ऑडियो फ़ॉर्मैट (MP3, FLAC, OGG आदि) चुनें, और एक क्लिक में स्ट्रीम‑रेडी M3U पाएँ।`,
+        supportedHeading: "समर्थित फ़ॉर्मैट:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      केवल चुने गए फ़ॉर्मैट में उपलब्ध ट्रैक शामिल किए जाएँगे।`,
+        howHeading: "यह कैसे काम करता है:",
+        howBody: `सेवा सीधे Internet Archive के मेटाडेटा API से जुड़ती है। यह साइट कोई सामग्री होस्ट नहीं करती और न ही मिरर करती है;
+      यह केवल सार्वजनिक मेटाडेटा लाती है और आपके चयन के आधार पर M3U बनाती है। हर ट्रैक का इनलाइन प्रीव्यू भी संभव है।`,
+        downloadingHeading: "डाउनलोडिंग:",
+        downloadingBody: `जेनरेट होने के बाद आप प्लेलिस्ट को मानक <code>.m3u</code> फ़ाइल के रूप में डाउनलोड कर सकते हैं, जो अधिकांश प्लेयर्स के साथ संगत है।
+      किसी खाते, लॉगिन या सॉफ़्टवेयर इंस्टॉल की आवश्यकता नहीं है।`,
+        privacyHeading: "गोपनीयता:",
+        privacyBody: `सारी प्रोसेसिंग आपके ब्राउज़र में होती है। साइट आपका इनपुट, प्लेबैक हिस्ट्री या डाउनलोड ट्रैक नहीं करती।
+      आपका डेटा आपके डिवाइस पर ही रहता है।`,
+        contribHeading: "GitHub पर योगदान करें:",
+        contribBody: `यह प्रोजेक्ट ओपन‑सोर्स है! सुधार, बग रिपोर्ट या फीचर सुझावों के लिए प्रोजेक्ट पेज देखें:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "अस्वीकरण:",
+        disclaimerBody: `यह वेबसाइट एक स्वतंत्र इंटरफ़ेस है और Internet Archive से संबद्ध या अनुमोदित नहीं है।
+      सभी ऑडियो सामग्री और लिंक सीधे <a href="https://archive.org" target="_blank">archive.org</a> से स्ट्रीम होते हैं और उनके
+      <a href="https://archive.org/about/terms.php" target="_blank">उपयोग की शर्तों</a> के अधीन हैं। कोई वारंटी नहीं।`,
+
+        labelUrl: "Internet Archive आइटम URL दर्ज करें",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "ऑडियो फ़ॉर्मैट चुनें",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "प्लेलिस्ट बनाएँ",
+        btnDownload: "M3U डाउनलोड करें",
+        loadingText: "लोड हो रहा है...",
+
+        outputTitle: "M3U प्लेलिस्ट आउटपुट",
+        previewTitle: "ट्रैक प्रीव्यू",
+        copyTitle: "क्लिपबोर्ड पर कॉपी करें",
+
+        errInvalidUrl: "अमान्य Archive URL",
+        errFetch: "मेटाडेटा प्राप्त करने में विफल",
+        errNoFormatPrefix: "इस फ़ॉर्मैट के लिए फ़ाइलें नहीं मिलीं: ",
+
+        editOnGithub: "GitHub पर यह पेज संपादित करें →"
+      },
+
+      hu: {
+        langCode: "hu",
+        metaTitle: "M3U lejátszási lista‑generátor az Internet Archive‑hoz és a Live Music Archive‑hoz",
+        metaDesc: "Hozz létre M3U listákat Internet Archive koncertekből és Live Music Archive felvételekből. MP3, FLAC, OGG támogatás előnézettel.",
+        metaKeywords: "m3u generátor, internet archive m3u, live music archive m3u, flac lejátszási lista, archive.org lejátszó",
+        ogTitle: "M3U generátor az Internet Archive‑hoz",
+        ogDesc: "M3U lejátszási listák azonnali létrehozása és letöltése Internet Archive tartalmakhoz.",
+        twitterTitle: "M3U generátor az Internet Archive‑hoz",
+        twitterDesc: "M3U generálás Internet Archive elemekből – formátumválasztás, előnézet, letöltés.",
+
+        pageTitle: "Internet Archive M3U lista‑készítő",
+        aboutHeading: "A szolgáltatásról:",
+        aboutBody: `Ez az ingyenes böngészős eszköz azonnal M3U listákat készít és tölt le
+      <a href="https://archive.org" target="_blank">Internet Archive</a> elemekből, beleértve a
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a> felvételeit. Illessz be érvényes URL‑t,
+      válassz hangformátumot (MP3, FLAC, OGG stb.), és egy kattintással megkapod a streamelhető M3U fájlt.`,
+        supportedHeading: "Támogatott formátumok:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Csak az adott formátumban elérhető számok kerülnek be.`,
+        howHeading: "Működés:",
+        howBody: `Szolgáltatásunk közvetlenül az Internet Archive metaadat API‑jához csatlakozik. Az oldal nem hosztol és nem tükröz tartalmat;
+      nyilvános metaadatokat kér le és ezekből készít M3U‑t a választásod alapján. Beépített lejátszóval előnézet is elérhető.`,
+        downloadingHeading: "Letöltés:",
+        downloadingBody: `A létrehozás után a lejátszási lista szabványos <code>.m3u</code> fájlként tölthető le, a legtöbb lejátszóval kompatibilis.
+      Fiók vagy telepítés nem szükséges.`,
+        privacyHeading: "Adatvédelem:",
+        privacyBody: `Minden feldolgozás a böngészőben történik. Az oldal nem tárolja és nem követi a bevitt adatokat, lejátszási előzményeket vagy letöltéseket.
+      Az adataid a készülékeden maradnak.`,
+        contribHeading: "Közreműködés a GitHubon:",
+        contribBody: `Nyílt forráskód! Ha javítanál, hibát jeleznél vagy funkciót javasolnál, látogasd meg a projektoldalt:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Jogi nyilatkozat:",
+        disclaimerBody: `Ez egy független felület oktatási és kényelmi célokra; nem áll kapcsolatban az Internet Archive‑val.
+      Minden hanganyag és link közvetlenül az <a href="https://archive.org" target="_blank">archive.org</a> oldalról streamelődik, és a
+      <a href="https://archive.org/about/terms.php" target="_blank">felhasználási feltételeik</a> vonatkoznak rá. Garancia nélkül.`,
+
+        labelUrl: "Add meg az Internet Archive elem URL‑jét",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Válassz hangformátumot",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Lejátszási lista készítése",
+        btnDownload: "M3U letöltése",
+        loadingText: "Betöltés...",
+
+        outputTitle: "M3U lista kimenet",
+        previewTitle: "Számok előnézete",
+        copyTitle: "Másolás a vágólapra",
+
+        errInvalidUrl: "Érvénytelen Archive URL",
+        errFetch: "A metaadatok lekérése nem sikerült",
+        errNoFormatPrefix: "Nem találhatók fájlok ehhez a formátumhoz: ",
+
+        editOnGithub: "Az oldal szerkesztése GitHubon →"
+      },
+
+      id: {
+        langCode: "id",
+        metaTitle: "Generator Playlist M3U untuk Internet Archive & Live Music Archive",
+        metaDesc: "Buat playlist M3U dari konser Internet Archive dan Live Music Archive. Dukungan MP3, FLAC, OGG dengan pratinjau.",
+        metaKeywords: "generator m3u, buat m3u internet archive, live music archive m3u, pembuat playlist flac, pemutar audio internet archive, playlist archive.org",
+        ogTitle: "Generator Playlist M3U untuk Internet Archive",
+        ogDesc: "Buat dan unduh playlist M3U untuk konser & rekaman Internet Archive. Dukungan MP3, FLAC, OGG + pratinjau.",
+        twitterTitle: "Generator Playlist M3U untuk Internet Archive",
+        twitterDesc: "Buat playlist M3U dari Internet Archive. Pilih format, pratinjau, dan unduh dalam hitungan detik.",
+
+        pageTitle: "Pembuat Playlist M3U Internet Archive",
+        aboutHeading: "Tentang layanan ini:",
+        aboutBody: `Layanan berbasis browser gratis untuk membuat & mengunduh playlist M3U dari
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, termasuk
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Tempel URL item,
+      pilih format audio (MP3, FLAC, OGG, dll.), dan dapatkan M3U siap streaming.`,
+        supportedHeading: "Format yang didukung:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Hanya trek yang tersedia dalam format terpilih yang akan dimasukkan.`,
+        howHeading: "Cara kerja:",
+        howBody: `Layanan ini terhubung langsung ke API metadata Internet Archive. Situs ini tidak meng-host atau mencerminkan konten —
+      hanya mengambil metadata publik dan membangun M3U sesuai pilihan Anda. Pratinjau trek tersedia melalui pemutar bawaan.`,
+        downloadingHeading: "Mengunduh:",
+        downloadingBody: `Setelah dibuat, playlist dapat diunduh sebagai berkas <code>.m3u</code> standar yang kompatibel dengan sebagian besar pemutar.`,
+        privacyHeading: "Privasi:",
+        privacyBody: `Semua proses terjadi di browser Anda. Situs tidak menyimpan atau melacak input, riwayat putar, atau unduhan Anda.`,
+        contribHeading: "Berkontribusi di GitHub:",
+        contribBody: `Proyek open-source! Ingin meningkatkan, melaporkan bug, atau mengusulkan fitur? Kunjungi:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Disclaimer:",
+        disclaimerBody: `Situs ini antarmuka independen untuk kemudahan & edukasi dan tidak berafiliasi dengan Internet Archive.
+      Semua konten audio dan tautan diputar langsung dari <a href="https://archive.org" target="_blank">archive.org</a>
+      dan tunduk pada <a href="https://archive.org/about/terms.php" target="_blank">Ketentuan</a> mereka. Tanpa jaminan.`,
+
+        labelUrl: "Masukkan URL item Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Pilih format audio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Buat Playlist",
+        btnDownload: "Unduh M3U",
+        loadingText: "Memuat...",
+
+        outputTitle: "Hasil Playlist M3U",
+        previewTitle: "Pratinjau Trek",
+        copyTitle: "Salin ke papan klip",
+
+        errInvalidUrl: "URL Internet Archive tidak valid",
+        errFetch: "Gagal mengambil metadata",
+        errNoFormatPrefix: "Tidak ditemukan berkas untuk format: ",
+
+        editOnGithub: "Edit halaman ini di GitHub →"
+      },
+
+      // --- Italian ---
+      it: {
+        langCode: "it",
+        metaTitle: "Generatore di playlist M3U per Internet Archive & Live Music Archive",
+        metaDesc: "Crea playlist M3U da concerti Internet Archive e Live Music Archive. Supporto MP3, FLAC, OGG con anteprima.",
+        metaKeywords: "generatore m3u, creare m3u internet archive, live music archive m3u, playlist flac, lettore audio internet archive, playlist archive.org",
+        ogTitle: "Generatore di playlist M3U per Internet Archive",
+        ogDesc: "Crea e scarica playlist M3U per concerti e registrazioni su Internet Archive. Supporto MP3, FLAC, OGG e anteprime.",
+        twitterTitle: "Generatore di playlist M3U per Internet Archive",
+        twitterDesc: "Crea playlist M3U da Internet Archive. Scegli formato, anteprima e download in pochi secondi.",
+
+        pageTitle: "Creator di playlist M3U per Internet Archive",
+        aboutHeading: "Informazioni sul servizio:",
+        aboutBody: `Servizio gratuito via browser per generare e scaricare playlist M3U da
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, incluso
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Incolla l’URL,
+      scegli il formato (MP3, FLAC, OGG, ecc.) e ottieni un M3U pronto allo streaming.`,
+        supportedHeading: "Formati supportati:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Solo i brani disponibili nel formato selezionato verranno inclusi.`,
+        howHeading: "Come funziona:",
+        howBody: `Si collega direttamente all’API dei metadati di Internet Archive. Nessun contenuto è ospitato o duplicato —
+      solo metadati pubblici per costruire l’M3U. Puoi anche ascoltare l’anteprima dei brani.`,
+        downloadingHeading: "Download:",
+        downloadingBody: `Una volta generata, la playlist può essere scaricata come file <code>.m3u</code> standard compatibile con la maggior parte dei player.`,
+        privacyHeading: "Privacy:",
+        privacyBody: `Tutto avviene nel tuo browser. Non memorizziamo né tracciamo i tuoi dati, la cronologia o i download.`,
+        contribHeading: "Contribuisci su GitHub:",
+        contribBody: `Progetto open‑source! Miglioramenti, bug e idee sono benvenuti:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Disclaimer:",
+        disclaimerBody: `Interfaccia indipendente per comodità e fini educativi, non affiliata a Internet Archive.
+      L’audio è trasmesso da <a href="https://archive.org" target="_blank">archive.org</a> e soggetto ai loro
+      <a href="https://archive.org/about/terms.php" target="_blank">Termini d’uso</a>. Nessuna garanzia.`,
+
+        labelUrl: "Inserisci l’URL dell’elemento Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Seleziona il formato audio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Genera playlist",
+        btnDownload: "Scarica M3U",
+        loadingText: "Caricamento...",
+
+        outputTitle: "Output playlist M3U",
+        previewTitle: "Anteprima brani",
+        copyTitle: "Copia negli appunti",
+
+        errInvalidUrl: "URL di Internet Archive non valido",
+        errFetch: "Impossibile recuperare i metadati",
+        errNoFormatPrefix: "Nessun file trovato per il formato: ",
+
+        editOnGithub: "Modifica questa pagina su GitHub →"
+      },
+
+      // --- Japanese ---
+      ja: {
+        langCode: "ja",
+        metaTitle: "Internet Archive・Live Music Archive 向け M3U プレイリスト生成ツール",
+        metaDesc: "Internet Archive と Live Music Archive の音源から M3U プレイリストを作成。MP3 / FLAC / OGG のプレビューに対応。",
+        metaKeywords: "m3u 生成, internet archive m3u, live music archive m3u, flac プレイリスト, archive.org プレイリスト",
+        ogTitle: "Internet Archive 用 M3U プレイリスト生成",
+        ogDesc: "Internet Archive のコンサートや録音から M3U を即時作成・ダウンロード。MP3/FLAC/OGGに対応。",
+        twitterTitle: "Internet Archive 用 M3U プレイリスト生成",
+        twitterDesc: "Internet Archive から M3U プレイリストを作成。形式を選んでプレビューしてすぐ保存。",
+
+        pageTitle: "Internet Archive M3U プレイリストビルダー",
+        aboutHeading: "このサービスについて：",
+        aboutBody: `無料のブラウザ型ツールです。
+      <a href="https://archive.org" target="_blank">Internet Archive</a>（
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a> を含む）のアイテム URL を貼り付け、
+      希望の形式（MP3 / FLAC / OGG など）を選ぶだけで、ストリーミング用の M3U を即時生成できます。`,
+        supportedHeading: "対応フォーマット：",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      選択した形式で利用可能なトラックのみを含みます。`,
+        howHeading: "仕組み：",
+        howBody: `Internet Archive のメタデータ API に直接接続します。サイトでコンテンツをホスト・ミラーはしません。
+      公開メタデータから M3U を構築します。内蔵プレイヤーで試聴も可能です。`,
+        downloadingHeading: "ダウンロード：",
+        downloadingBody: `生成後は標準的な <code>.m3u</code> として保存できます。多くのプレイヤーで利用可能です。`,
+        privacyHeading: "プライバシー：",
+        privacyBody: `処理はすべてブラウザ内で行われます。入力・再生履歴・ダウンロードの追跡や保存は行いません。`,
+        contribHeading: "GitHub で貢献：",
+        contribBody: `オープンソースです。改善提案やバグ報告は以下へ：<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "免責事項：",
+        disclaimerBody: `本サイトは便宜・学習目的の独立したインターフェースで、Internet Archive 非公式です。
+      すべての音源とリンクは <a href="https://archive.org" target="_blank">archive.org</a> から直接再生され、
+      利用は <a href="https://archive.org/about/terms.php" target="_blank">利用規約</a>に従います。保証は行いません。`,
+
+        labelUrl: "Internet Archive アイテムの URL を入力",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "音声フォーマットを選択",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "プレイリストを生成",
+        btnDownload: "M3U をダウンロード",
+        loadingText: "読み込み中...",
+
+        outputTitle: "M3U 出力",
+        previewTitle: "トラック試聴",
+        copyTitle: "クリップボードにコピー",
+
+        errInvalidUrl: "Internet Archive の URL が無効です",
+        errFetch: "メタデータの取得に失敗しました",
+        errNoFormatPrefix: "該当形式のファイルが見つかりません：",
+
+        editOnGithub: "GitHub でこのページを編集 →"
+      },
+
+      // --- Korean ---
+      ko: {
+        langCode: "ko",
+        metaTitle: "Internet Archive & Live Music Archive용 M3U 플레이리스트 생성기",
+        metaDesc: "Internet Archive와 Live Music Archive 녹음에서 M3U 플레이리스트 생성. MP3, FLAC, OGG 미리듣기 지원.",
+        metaKeywords: "m3u 생성기, internet archive m3u, live music archive m3u, flac 플레이리스트, archive.org 플레이리스트",
+        ogTitle: "Internet Archive M3U 플레이리스트 생성기",
+        ogDesc: "Internet Archive의 공연/녹음에서 M3U를 즉시 생성하고 다운로드하세요. MP3/FLAC/OGG 지원.",
+        twitterTitle: "Internet Archive M3U 플레이리스트 생성기",
+        twitterDesc: "Internet Archive에서 M3U 플레이리스트 생성. 형식 선택, 미리듣기, 빠른 다운로드.",
+
+        pageTitle: "Internet Archive M3U 플레이리스트 빌더",
+        aboutHeading: "서비스 소개:",
+        aboutBody: `브라우저에서 바로 사용할 수 있는 무료 도구입니다.
+      <a href="https://archive.org" target="_blank">Internet Archive</a>의 항목(및
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>)에서
+      URL을 붙여넣고 원하는 오디오 형식(MP3, FLAC, OGG 등)을 선택하면 스트리밍용 M3U를 즉시 생성합니다.`,
+        supportedHeading: "지원 형식:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      선택한 형식으로 제공되는 트랙만 포함됩니다.`,
+        howHeading: "동작 방식:",
+        howBody: `Internet Archive 메타데이터 API에 직접 연결합니다. 이 사이트는 콘텐츠를 호스팅/미러링하지 않습니다.
+      공개 메타데이터를 이용해 M3U를 구성하며, 내장 플레이어로 미리 재생할 수 있습니다.`,
+        downloadingHeading: "다운로드:",
+        downloadingBody: `생성된 플레이리스트는 표준 <code>.m3u</code> 파일로 저장할 수 있으며 대부분의 플레이어에서 사용 가능합니다.`,
+        privacyHeading: "개인정보 보호:",
+        privacyBody: `모든 처리는 브라우저에서 이뤄집니다. 입력, 재생 기록, 다운로드 기록을 저장하거나 추적하지 않습니다.`,
+        contribHeading: "GitHub에서 참여하기:",
+        contribBody: `오픈소스 프로젝트입니다. 개선/버그 제보/기능 제안은 다음을 방문하세요:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "면책 조항:",
+        disclaimerBody: `본 사이트는 편의·교육 목적의 독립형 인터페이스로, Internet Archive와 제휴되어 있지 않습니다.
+      모든 오디오와 링크는 <a href="https://archive.org" target="_blank">archive.org</a>에서 직접 재생되며,
+      사용은 <a href="https://archive.org/about/terms.php" target="_blank">이용 약관</a>을 따릅니다. 보증은 제공되지 않습니다.`,
+
+        labelUrl: "Internet Archive 항목 URL 입력",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "오디오 형식 선택",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "플레이리스트 생성",
+        btnDownload: "M3U 다운로드",
+        loadingText: "로딩 중...",
+
+        outputTitle: "M3U 출력",
+        previewTitle: "트랙 미리듣기",
+        copyTitle: "클립보드에 복사",
+
+        errInvalidUrl: "유효하지 않은 Internet Archive URL",
+        errFetch: "메타데이터를 가져오지 못했습니다",
+        errNoFormatPrefix: "해당 형식의 파일을 찾을 수 없습니다: ",
+
+        editOnGithub: "GitHub에서 이 페이지 수정 →"
+      },
+
+      // --- Malay ---
+      ms: {
+        langCode: "ms",
+        metaTitle: "Penjana Senarai Main M3U untuk Internet Archive & Live Music Archive",
+        metaDesc: "Cipta senarai main M3U daripada konsert Internet Archive dan Live Music Archive. Sokong MP3, FLAC, OGG dengan pratonton.",
+        metaKeywords: "penjana m3u, cipta m3u internet archive, live music archive m3u, senarai main flac, pemain audio internet archive, senarai main archive.org",
+        ogTitle: "Penjana M3U untuk Internet Archive",
+        ogDesc: "Cipta & muat turun M3U untuk konsert dan rakaman Internet Archive. Sokong MP3, FLAC, OGG.",
+        twitterTitle: "Penjana M3U untuk Internet Archive",
+        twitterDesc: "Cipta senarai main M3U daripada Internet Archive. Pilih format, pratonton, dan muat turun segera.",
+
+        pageTitle: "Pembina Senarai Main M3U Internet Archive",
+        aboutHeading: "Tentang perkhidmatan ini:",
+        aboutBody: `Alat berasaskan pelayar percuma untuk menjana & memuat turun M3U daripada
+      <a href="https://archive.org" target="_blank">Internet Archive</a> termasuk
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Tampal URL item,
+      pilih format (MP3, FLAC, OGG), dan dapatkan M3U sedia untuk strim.`,
+        supportedHeading: "Format disokong:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Hanya trek tersedia dalam format terpilih akan disertakan.`,
+        howHeading: "Cara kerja:",
+        howBody: `Sambung terus ke API metadata Internet Archive. Kami tidak menghos atau mencerminkan kandungan —
+      hanya mengambil metadata umum dan membina M3U. Pratonton disediakan.`,
+        downloadingHeading: "Muat turun:",
+        downloadingBody: `Selepas dijana, anda boleh memuat turun sebagai fail <code>.m3u</code> standard serasi dengan kebanyakan pemain audio.`,
+        privacyHeading: "Privasi:",
+        privacyBody: `Semua pemprosesan berlaku dalam pelayar anda. Tiada data anda disimpan atau dijejaki.`,
+        contribHeading: "Sumbang di GitHub:",
+        contribBody: `Projek sumber terbuka! Cadangan dan laporan pepijat dialu-alukan:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Penafian:",
+        disclaimerBody: `Laman ini ialah antaramuka bebas untuk kemudahan & pendidikan dan tidak bersekutu dengan Internet Archive.
+      Semua audio dan pautan distrim terus dari <a href="https://archive.org" target="_blank">archive.org</a> dan tertakluk kepada
+      <a href="https://archive.org/about/terms.php" target="_blank">Terma Penggunaan</a> mereka.`,
+
+        labelUrl: "Masukkan URL item Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Pilih format audio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Jana Senarai Main",
+        btnDownload: "Muat turun M3U",
+        loadingText: "Memuatkan...",
+
+        outputTitle: "Output Senarai Main M3U",
+        previewTitle: "Pratonton Trek",
+        copyTitle: "Salin ke papan klip",
+
+        errInvalidUrl: "URL Internet Archive tidak sah",
+        errFetch: "Gagal mendapatkan metadata",
+        errNoFormatPrefix: "Tiada fail ditemui untuk format: ",
+
+        editOnGithub: "Edit halaman ini di GitHub →"
+      },
+
+      // --- Norwegian (Bokmål) ---
+      no: {
+        langCode: "no",
+        metaTitle: "M3U-spillelistgenerator for Internet Archive & Live Music Archive",
+        metaDesc: "Lag M3U-spillelister fra konserter i Internet Archive og Live Music Archive. Støtter MP3, FLAC og OGG med forhåndsvisning.",
+        metaKeywords: "m3u generator, internet archive m3u, live music archive m3u, flac-spilleliste, archive.org spilleliste",
+        ogTitle: "M3U-generator for Internet Archive",
+        ogDesc: "Opprett og last ned M3U-spillelister for opptak i Internet Archive. MP3/FLAC/OGG-støtte.",
+        twitterTitle: "M3U-generator for Internet Archive",
+        twitterDesc: "Lag M3U fra Internet Archive. Velg format, forhåndsvis og last ned på sekunder.",
+
+        pageTitle: "Internet Archive M3U-spillelistbygger",
+        aboutHeading: "Om denne tjenesten:",
+        aboutBody: `Gratis nettleserbasert verktøy for å lage og laste ned M3U fra
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, inkludert
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Lim inn URL,
+      velg lydformat (MP3, FLAC, OGG osv.), og få en M3U klar for strømming.`,
+        supportedHeading: "Støttede formater:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Kun spor som finnes i valgt format blir inkludert.`,
+        howHeading: "Slik fungerer det:",
+        howBody: `Kobler direkte til Internet Archives metadata‑API. Vi hoster eller speiler ikke innhold —
+      vi henter offentlig metadata og bygger M3U. Forhåndslytting er tilgjengelig.`,
+        downloadingHeading: "Nedlasting:",
+        downloadingBody: `Etter generering kan spillelisten lagres som en standard <code>.m3u</code> som støttes av de fleste spillere.`,
+        privacyHeading: "Personvern:",
+        privacyBody: `All behandling skjer i nettleseren. Vi lagrer eller sporer ikke dataene dine.`,
+        contribHeading: "Bidra på GitHub:",
+        contribBody: `Åpen kildekode! Forbedringer og feilrapporter tas imot:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Ansvarsfraskrivelse:",
+        disclaimerBody: `Dette er et selvstendig grensesnitt for bekvemmelighet og læring og er ikke tilknyttet Internet Archive.
+      Alt innhold strømmes fra <a href="https://archive.org" target="_blank">archive.org</a> og er underlagt deres
+      <a href="https://archive.org/about/terms.php" target="_blank">vilkår</a>. Uten garantier.`,
+
+        labelUrl: "Skriv inn URL til Internet Archive-element",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Velg lydformat",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Generer spilleliste",
+        btnDownload: "Last ned M3U",
+        loadingText: "Laster...",
+
+        outputTitle: "M3U‑utdata",
+        previewTitle: "Forhåndsvis spor",
+        copyTitle: "Kopier til utklippstavle",
+
+        errInvalidUrl: "Ugyldig Internet Archive‑URL",
+        errFetch: "Kunne ikke hente metadata",
+        errNoFormatPrefix: "Ingen filer funnet for format: ",
+
+        editOnGithub: "Rediger denne siden på GitHub →"
+      },
+
+      // --- Polish ---
+      pl: {
+        langCode: "pl",
+        metaTitle: "Generator playlist M3U dla Internet Archive i Live Music Archive",
+        metaDesc: "Twórz playlisty M3U z koncertów Internet Archive i Live Music Archive. Obsługa MP3, FLAC, OGG z podglądem.",
+        metaKeywords: "generator m3u, internet archive m3u, live music archive m3u, playlista flac, odtwarzacz internet archive, playlista archive.org",
+        ogTitle: "Generator M3U dla Internet Archive",
+        ogDesc: "Twórz i pobieraj playlisty M3U dla nagrań w Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "Generator M3U dla Internet Archive",
+        twitterDesc: "Utwórz playlistę M3U z Internet Archive. Wybierz format, podgląd i pobierz.",
+
+        pageTitle: "Kreator playlist M3U Internet Archive",
+        aboutHeading: "O usłudze:",
+        aboutBody: `Darmowe narzędzie w przeglądarce do tworzenia i pobierania playlist M3U z
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, w tym
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Wklej URL,
+      wybierz format (MP3, FLAC, OGG), a my zbudujemy M3U gotową do streamingu.`,
+        supportedHeading: "Obsługiwane formaty:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Do playlisty trafią tylko utwory dostępne w wybranym formacie.`,
+        howHeading: "Jak to działa:",
+        howBody: `Łączymy się bezpośrednio z API metadanych Internet Archive. Nie hostujemy ani nie kopiujemy treści —
+      pobieramy publiczne metadane i tworzymy M3U. Dostępny jest też podgląd utworów.`,
+        downloadingHeading: "Pobieranie:",
+        downloadingBody: `Po utworzeniu możesz pobrać standardowy plik <code>.m3u</code> kompatybilny z większością odtwarzaczy.`,
+        privacyHeading: "Prywatność:",
+        privacyBody: `Wszystko odbywa się w Twojej przeglądarce. Nie przechowujemy ani nie śledzimy Twoich danych.`,
+        contribHeading: "Współpraca na GitHubie:",
+        contribBody: `Projekt open‑source! Zgłaszaj poprawki i błędy tutaj:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Zastrzeżenia:",
+        disclaimerBody: `To niezależny interfejs tworzony w celach wygody i edukacji, bez powiązań z Internet Archive.
+      Cała treść jest odtwarzana z <a href="https://archive.org" target="_blank">archive.org</a>
+      i podlega ich <a href="https://archive.org/about/terms.php" target="_blank">warunkom</a>. Bez gwarancji.`,
+
+        labelUrl: "Wpisz adres URL elementu Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Wybierz format audio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Utwórz playlistę",
+        btnDownload: "Pobierz M3U",
+        loadingText: "Ładowanie...",
+
+        outputTitle: "Wynik playlisty M3U",
+        previewTitle: "Podgląd utworów",
+        copyTitle: "Kopiuj do schowka",
+
+        errInvalidUrl: "Nieprawidłowy adres URL Internet Archive",
+        errFetch: "Nie udało się pobrać metadanych",
+        errNoFormatPrefix: "Nie znaleziono plików dla formatu: ",
+
+        editOnGithub: "Edytuj tę stronę na GitHubie →"
+      },
+
+      // --- Portuguese (generic) ---
+      pt: {
+        langCode: "pt",
+        metaTitle: "Gerador de playlists M3U para Internet Archive & Live Music Archive",
+        metaDesc: "Crie playlists M3U de concertos do Internet Archive e Live Music Archive. Suporte a MP3, FLAC e OGG com prévia.",
+        metaKeywords: "gerador m3u, criar m3u internet archive, live music archive m3u, playlist flac, reprodutor internet archive, playlist archive.org",
+        ogTitle: "Gerador M3U para Internet Archive",
+        ogDesc: "Crie e baixe playlists M3U para gravações do Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "Gerador M3U para Internet Archive",
+        twitterDesc: "Crie playlists M3U do Internet Archive. Escolha o formato, visualize e baixe rapidamente.",
+
+        pageTitle: "Construtor de Playlists M3U do Internet Archive",
+        aboutHeading: "Sobre o serviço:",
+        aboutBody: `Ferramenta gratuita no navegador para gerar e baixar M3U a partir do
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, incluindo
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Cole a URL,
+      escolha o formato (MP3, FLAC, OGG etc.) e obtenha um M3U pronto para streaming.`,
+        supportedHeading: "Formatos suportados:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Apenas faixas disponíveis no formato escolhido serão incluídas.`,
+        howHeading: "Como funciona:",
+        howBody: `Conectamos diretamente à API de metadados do Internet Archive. Não hospedamos ou espelhamos conteúdo —
+      buscamos metadados públicos e montamos o M3U. Prévia das faixas disponível.`,
+        downloadingHeading: "Download:",
+        downloadingBody: `Após gerar, você pode baixar como <code>.m3u</code> padrão, compatível com a maioria dos players.`,
+        privacyHeading: "Privacidade:",
+        privacyBody: `Tudo acontece no seu navegador. Não armazenamos nem rastreamos seus dados.`,
+        contribHeading: "Contribua no GitHub:",
+        contribBody: `Projeto de código aberto! Envie melhorias e bugs em:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Aviso legal:",
+        disclaimerBody: `Interface independente para conveniência e fins educacionais; não afiliada ao Internet Archive.
+      Todo o áudio é transmitido de <a href="https://archive.org" target="_blank">archive.org</a> e sujeito aos
+      <a href="https://archive.org/about/terms.php" target="_blank">Termos de Uso</a>. Sem garantias.`,
+
+        labelUrl: "Insira a URL do item do Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Selecione o formato de áudio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Gerar playlist",
+        btnDownload: "Baixar M3U",
+        loadingText: "Carregando...",
+
+        outputTitle: "Saída da playlist M3U",
+        previewTitle: "Prévia das faixas",
+        copyTitle: "Copiar para a área de transferência",
+
+        errInvalidUrl: "URL do Internet Archive inválida",
+        errFetch: "Falha ao obter metadados",
+        errNoFormatPrefix: "Nenhum arquivo encontrado para o formato: ",
+
+        editOnGithub: "Editar esta página no GitHub →"
+      },
+
+      // --- Romanian ---
+      ro: {
+        langCode: "ro",
+        metaTitle: "Generator de playlist M3U pentru Internet Archive & Live Music Archive",
+        metaDesc: "Creează playlist‑uri M3U din concertele Internet Archive și Live Music Archive. MP3, FLAC, OGG cu previzualizare.",
+        metaKeywords: "generator m3u, creare m3u internet archive, live music archive m3u, playlist flac, player internet archive, playlist archive.org",
+        ogTitle: "Generator M3U pentru Internet Archive",
+        ogDesc: "Creează și descarcă playlist‑uri M3U pentru înregistrări din Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "Generator M3U pentru Internet Archive",
+        twitterDesc: "Creează M3U din Internet Archive. Alege formatul, previzualizează și descarcă rapid.",
+
+        pageTitle: "Constructor de playlist M3U pentru Internet Archive",
+        aboutHeading: "Despre acest serviciu:",
+        aboutBody: `Instrument gratuit în browser pentru generarea și descărcarea M3U din
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, inclusiv
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Inserează URL‑ul,
+      alege formatul (MP3, FLAC, OGG etc.) și obții un M3U gata de streaming.`,
+        supportedHeading: "Formate acceptate:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Sunt incluse doar piesele disponibile în formatul ales.`,
+        howHeading: "Cum funcționează:",
+        howBody: `Ne conectăm direct la API‑ul de metadate Internet Archive. Nu găzduim sau oglindim conținut —
+      preluăm metadate publice și construim M3U. Previzualizare disponibilă.`,
+        downloadingHeading: "Descărcare:",
+        downloadingBody: `După generare, poți salva ca fișier <code>.m3u</code> standard, compatibil cu majoritatea playerelor.`,
+        privacyHeading: "Confidențialitate:",
+        privacyBody: `Totul se procesează în browser. Nu stocăm și nu urmărim datele tale.`,
+        contribHeading: "Contribuie pe GitHub:",
+        contribBody: `Proiect open‑source! Îmbunătățiri și bug‑uri pot fi raportate aici:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Declinarea responsabilității:",
+        disclaimerBody: `Acesta este un interfață independentă pentru comoditate și scopuri educaționale, neafiliată Internet Archive.
+      Tot audio‑ul este redat de pe <a href="https://archive.org" target="_blank">archive.org</a> și respectă
+      <a href="https://archive.org/about/terms.php" target="_blank">Termenii de utilizare</a>. Fără garanții.`,
+
+        labelUrl: "Introdu URL‑ul elementului Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Selectează formatul audio",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Generează playlist",
+        btnDownload: "Descarcă M3U",
+        loadingText: "Se încarcă...",
+
+        outputTitle: "Rezultat playlist M3U",
+        previewTitle: "Previzualizare piese",
+        copyTitle: "Copiază în clipboard",
+
+        errInvalidUrl: "URL Internet Archive invalid",
+        errFetch: "Nu s‑au putut obține metadatele",
+        errNoFormatPrefix: "Nu au fost găsite fișiere pentru formatul: ",
+
+        editOnGithub: "Editează această pagină pe GitHub →"
+      },
+
+      // --- Russian ---
       ru: {
         langCode: "ru",
         metaTitle: "Создавайте M3U плейлисты из записей Internet Archive и Live Music Archive",
@@ -378,6 +1800,67 @@
         editOnGithub: "Изменить эту страницу на GitHub →"
       },
 
+      // --- Slovak ---
+      sk: {
+        langCode: "sk",
+        metaTitle: "Generátor playlistov M3U pre Internet Archive & Live Music Archive",
+        metaDesc: "Vytvárajte M3U playlisty z koncertov Internet Archive a Live Music Archive. MP3, FLAC, OGG s náhľadom.",
+        metaKeywords: "generátor m3u, internet archive m3u, live music archive m3u, flac playlist, archive.org playlist",
+        ogTitle: "Generátor M3U pre Internet Archive",
+        ogDesc: "Okamžite vytvárajte a sťahujte M3U pre nahrávky v Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "Generátor M3U pre Internet Archive",
+        twitterDesc: "Vytvorte M3U z Internet Archive. Zvoľte formát, náhľad a stiahnite.",
+
+        pageTitle: "Tvorca playlistov M3U Internet Archive",
+        aboutHeading: "O službe:",
+        aboutBody: `Bezplatný nástroj v prehliadači na generovanie a sťahovanie M3U z
+      <a href="https://archive.org" target="_blank">Internet Archive</a> vrátane
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Vložte URL,
+      vyberte formát (MP3, FLAC, OGG) a získajte M3U pripravené na streamovanie.`,
+        supportedHeading: "Podporované formáty:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Zahrnuté budú iba skladby dostupné vo zvolenom formáte.`,
+        howHeading: "Ako to funguje:",
+        howBody: `Priamo sa pripájame k API metadát Internet Archive. Obsah nehostujeme ani nezrkadlíme —
+      pracujeme s verejnými metadátami a vytvárame M3U. K dispozícii je aj náhľad prehrávania.`,
+        downloadingHeading: "Sťahovanie:",
+        downloadingBody: `Po vygenerovaní môžete uložiť štandardný súbor <code>.m3u</code> kompatibilný s väčšinou prehrávačov.`,
+        privacyHeading: "Súkromie:",
+        privacyBody: `Všetko prebieha vo vašom prehliadači. Vaše údaje neukladáme ani nesledujeme.`,
+        contribHeading: "Prispejte na GitHube:",
+        contribBody: `Open‑source projekt! Vylepšenia a hlásenia chýb sem:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Vyhlásenie:",
+        disclaimerBody: `Nezávislé rozhranie pre pohodlie a vzdelávanie, nie je prepojené s Internet Archive.
+      Obsah sa streamuje z <a href="https://archive.org" target="_blank">archive.org</a> podľa ich
+      <a href="https://archive.org/about/terms.php" target="_blank">podmienok</a>.`,
+
+        labelUrl: "Zadajte URL položky Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Vyberte formát zvuku",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Vygenerovať playlist",
+        btnDownload: "Stiahnuť M3U",
+        loadingText: "Načítava sa...",
+
+        outputTitle: "Výstup playlistu M3U",
+        previewTitle: "Náhľad skladieb",
+        copyTitle: "Kopírovať do schránky",
+
+        errInvalidUrl: "Neplatná adresa URL Internet Archive",
+        errFetch: "Nepodarilo sa získať metadáta",
+        errNoFormatPrefix: "Nenašli sa súbory pre formát: ",
+
+        editOnGithub: "Upraviť túto stranu na GitHube →"
+      },
+
+      // --- Spanish ---
       es: {
         langCode: "es",
         metaTitle: "Generador de listas M3U para Internet Archive y Live Music Archive",
@@ -440,7 +1923,308 @@
 
         // Misc
         editOnGithub: "Editar esta página en GitHub →"
+      },
+
+      // --- Swedish ---
+      sv: {
+        langCode: "sv",
+        metaTitle: "M3U‑spellistgenerator för Internet Archive & Live Music Archive",
+        metaDesc: "Skapa M3U‑spellistor från konserter på Internet Archive och Live Music Archive. Stöd för MP3, FLAC, OGG med förhandsvisning.",
+        metaKeywords: "m3u generator, internet archive m3u, live music archive m3u, flac spellista, archive.org spellista",
+        ogTitle: "M3U‑generator för Internet Archive",
+        ogDesc: "Skapa och ladda ner M3U för inspelningar på Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "M3U‑generator för Internet Archive",
+        twitterDesc: "Skapa M3U från Internet Archive. Välj format, förhandsgranska och ladda ner.",
+
+        pageTitle: "Internet Archive M3U‑spellistbyggare",
+        aboutHeading: "Om tjänsten:",
+        aboutBody: `Kostnadsfritt webbaserat verktyg för att skapa och ladda ner M3U från
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, inklusive
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Klistra in URL,
+      välj ljudformat (MP3, FLAC, OGG) och få en M3U redo för streaming.`,
+        supportedHeading: "Format som stöds:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Endast spår som finns i valt format inkluderas.`,
+        howHeading: "Så fungerar det:",
+        howBody: `Direktkoppling till Internet Archives metadata‑API. Vi hostar inte innehåll —
+      vi hämtar offentlig metadata och bygger M3U. Förhandslyssning finns.`,
+        downloadingHeading: "Nedladdning:",
+        downloadingBody: `Efter generering kan spellistan sparas som en standardfil <code>.m3u</code> som stöds av de flesta spelare.`,
+        privacyHeading: "Integritet:",
+        privacyBody: `All hantering sker i din webbläsare. Vi lagrar eller spårar inte dina uppgifter.`,
+        contribHeading: "Bidra på GitHub:",
+        contribBody: `Öppen källkod! Förbättringar och buggar tas gärna emot:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Ansvarsfriskrivning:",
+        disclaimerBody: `Detta är ett fristående gränssnitt för bekvämlighet och utbildning och är inte kopplat till Internet Archive.
+      Allt ljud strömmas från <a href="https://archive.org" target="_blank">archive.org</a> och omfattas av deras
+      <a href="https://archive.org/about/terms.php" target="_blank">villkor</a>.`,
+
+        labelUrl: "Ange URL till Internet Archive‑objekt",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Välj ljudformat",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Skapa spellista",
+        btnDownload: "Ladda ner M3U",
+        loadingText: "Laddar...",
+
+        outputTitle: "M3U‑utdata",
+        previewTitle: "Förhandsvisa spår",
+        copyTitle: "Kopiera till urklipp",
+
+        errInvalidUrl: "Ogiltig Internet Archive‑URL",
+        errFetch: "Det gick inte att hämta metadata",
+        errNoFormatPrefix: "Inga filer hittades för format: ",
+
+        editOnGithub: "Redigera den här sidan på GitHub →"
+      },
+
+      // --- Thai ---
+      th: {
+        langCode: "th",
+        metaTitle: "ตัวสร้างเพลย์ลิสต์ M3U สำหรับ Internet Archive และ Live Music Archive",
+        metaDesc: "สร้างเพลย์ลิสต์ M3U จากคอนเสิร์ตใน Internet Archive และ Live Music Archive รองรับ MP3, FLAC, OGG พร้อมพรีวิว",
+        metaKeywords: "ตัวสร้าง m3u, สร้าง m3u internet archive, live music archive m3u, เพลย์ลิสต์ flac, archive.org เพลย์ลิสต์",
+        ogTitle: "ตัวสร้าง M3U สำหรับ Internet Archive",
+        ogDesc: "สร้างและดาวน์โหลด M3U สำหรับบันทึกเสียงใน Internet Archive รองรับ MP3/FLAC/OGG",
+        twitterTitle: "ตัวสร้าง M3U สำหรับ Internet Archive",
+        twitterDesc: "สร้าง M3U จาก Internet Archive เลือกรูปแบบ พรีวิว และดาวน์โหลดได้ทันที",
+
+        pageTitle: "เครื่องมือสร้างเพลย์ลิสต์ M3U ของ Internet Archive",
+        aboutHeading: "เกี่ยวกับบริการนี้:",
+        aboutBody: `เครื่องมือฟรีบนเบราว์เซอร์สำหรับสร้างและดาวน์โหลด M3U จาก
+      <a href="https://archive.org" target="_blank">Internet Archive</a> รวมถึง
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a> วางลิงก์
+      เลือกรูปแบบเสียง (MP3, FLAC, OGG) แล้วรับไฟล์ M3U พร้อมสตรีมมิ่งได้ทันที`,
+        supportedHeading: "รูปแบบที่รองรับ:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      จะรวมเฉพาะแทร็กที่มีในรูปแบบที่เลือกเท่านั้น`,
+        howHeading: "การทำงาน:",
+        howBody: `เชื่อมต่อโดยตรงกับ API เมตาดาต้าของ Internet Archive เว็บไซต์นี้ไม่โฮสต์หรือมิเรอร์เนื้อหา —
+      เพียงดึงเมตาดาต้าสาธารณะและประกอบเป็น M3U พร้อมพรีวิวในตัว`,
+        downloadingHeading: "การดาวน์โหลด:",
+        downloadingBody: `หลังสร้างเพลย์ลิสต์แล้วสามารถบันทึกเป็นไฟล์ <code>.m3u</code> มาตรฐาน ใช้ได้กับโปรแกรมเล่นส่วนใหญ่`,
+        privacyHeading: "ความเป็นส่วนตัว:",
+        privacyBody: `ทุกอย่างทำงานในเบราว์เซอร์ของคุณ เราไม่จัดเก็บหรือติดตามข้อมูลของคุณ`,
+        contribHeading: "ร่วมพัฒนาบน GitHub:",
+        contribBody: `โปรเจ็กต์โอเพ่นซอร์ส! เสนอปรับปรุงหรือรายงานบั๊กได้ที่:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "ข้อจำกัดความรับผิด:",
+        disclaimerBody: `นี่คืออินเทอร์เฟซอิสระเพื่อความสะดวกและการศึกษา ไม่ได้เกี่ยวข้องกับ Internet Archive
+      เนื้อหาทั้งหมดสตรีมจาก <a href="https://archive.org" target="_blank">archive.org</a> และเป็นไปตาม
+      <a href="https://archive.org/about/terms.php" target="_blank">เงื่อนไขการใช้งาน</a> ของพวกเขา`,
+
+        labelUrl: "กรอกลิงก์รายการของ Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "เลือกรูปแบบเสียง",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "สร้างเพลย์ลิสต์",
+        btnDownload: "ดาวน์โหลด M3U",
+        loadingText: "กำลังโหลด...",
+
+        outputTitle: "ผลลัพธ์เพลย์ลิสต์ M3U",
+        previewTitle: "พรีวิวแทร็ก",
+        copyTitle: "คัดลอกไปยังคลิปบอร์ด",
+
+        errInvalidUrl: "ลิงก์ Internet Archive ไม่ถูกต้อง",
+        errFetch: "ไม่สามารถดึงข้อมูลเมตาดาต้าได้",
+        errNoFormatPrefix: "ไม่พบไฟล์สำหรับรูปแบบ: ",
+
+        editOnGithub: "แก้ไขหน้านี้บน GitHub →"
+      },
+
+      // --- Turkish ---
+      tr: {
+        langCode: "tr",
+        metaTitle: "Internet Archive & Live Music Archive için M3U Çalma Listesi Oluşturucu",
+        metaDesc: "Internet Archive ve Live Music Archive kayıtlarından M3U oluşturun. MP3, FLAC, OGG önizleme destekli.",
+        metaKeywords: "m3u oluşturucu, internet archive m3u, live music archive m3u, flac çalma listesi, archive.org çalma listesi",
+        ogTitle: "Internet Archive için M3U Oluşturucu",
+        ogDesc: "Internet Archive kayıtları için M3U oluşturup indirin. MP3/FLAC/OGG desteği.",
+        twitterTitle: "Internet Archive için M3U Oluşturucu",
+        twitterDesc: "Internet Archive’dan M3U oluşturun. Format seçin, önizleyin, hızla indirin.",
+
+        pageTitle: "Internet Archive M3U Listesi Oluşturucu",
+        aboutHeading: "Hakkında:",
+        aboutBody: `Bu ücretsiz tarayıcı aracıyla
+      <a href="https://archive.org" target="_blank">Internet Archive</a> (ve
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>) öğelerinden M3U oluşturabilir,
+      MP3/FLAC/OGG gibi formatları seçip anında akışa hazır hale getirebilirsiniz.`,
+        supportedHeading: "Desteklenen formatlar:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Yalnızca seçtiğiniz formatta mevcut parçalar dahil edilir.`,
+        howHeading: "Nasıl çalışır:",
+        howBody: `Internet Archive metadata API’sine doğrudan bağlanır. İçerik barındırılmaz veya yansıtılmaz —
+      herkese açık metadatalarla M3U oluşturulur. Gömülü oynatıcıyla önizleme yapılabilir.`,
+        downloadingHeading: "İndirme:",
+        downloadingBody: `Oluşturulduktan sonra çalma listesini standart <code>.m3u</code> dosyası olarak indirebilirsiniz.`,
+        privacyHeading: "Gizlilik:",
+        privacyBody: `Tüm işlemler tarayıcınızda gerçekleşir. Verilerinizi saklamaz veya izlemeyiz.`,
+        contribHeading: "GitHub’da katkı:",
+        contribBody: `Açık kaynak! İyileştirme ve hata bildirimleri için:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Sorumluluk reddi:",
+        disclaimerBody: `Bu site kolaylık ve eğitim amaçlı bağımsız bir arayüzdür; Internet Archive ile bağlantılı değildir.
+      Tüm ses ve bağlantılar <a href="https://archive.org" target="_blank">archive.org</a> üzerinden yayınlanır ve
+      <a href="https://archive.org/about/terms.php" target="_blank">Kullanım Şartları</a> geçerlidir.`,
+
+        labelUrl: "Internet Archive öğe URL’sini girin",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Ses biçimi seçin",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Çalma listesi oluştur",
+        btnDownload: "M3U indir",
+        loadingText: "Yükleniyor...",
+
+        outputTitle: "M3U çıktı",
+        previewTitle: "Parça önizlemeleri",
+        copyTitle: "Panoya kopyala",
+
+        errInvalidUrl: "Geçersiz Internet Archive URL’si",
+        errFetch: "Metadata alınamadı",
+        errNoFormatPrefix: "Biçim için dosya bulunamadı: ",
+
+        editOnGithub: "Bu sayfayı GitHub’da düzenle →"
+      },
+
+      // --- Ukrainian ---
+      uk: {
+        langCode: "uk",
+        metaTitle: "Генератор плейлистів M3U для Internet Archive та Live Music Archive",
+        metaDesc: "Створюйте M3U з концертів Internet Archive і Live Music Archive. Підтримка MP3, FLAC, OGG з попереднім прослуховуванням.",
+        metaKeywords: "генератор m3u, internet archive m3u, live music archive m3u, плейлист flac, archive.org плейлист",
+        ogTitle: "Генератор M3U для Internet Archive",
+        ogDesc: "Миттєве створення та завантаження M3U для записів Internet Archive. MP3/FLAC/OGG.",
+        twitterTitle: "Генератор M3U для Internet Archive",
+        twitterDesc: "Створюйте M3U з Internet Archive. Оберіть формат, перегляньте, завантажте.",
+
+        pageTitle: "Конструктор плейлистів M3U для Internet Archive",
+        aboutHeading: "Про сервіс:",
+        aboutBody: `Безкоштовний інструмент у браузері для створення та завантаження M3U з
+      <a href="https://archive.org" target="_blank">Internet Archive</a>, включно з
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Вставте URL,
+      оберіть формат (MP3, FLAC, OGG тощо) — і отримайте M3U для стримінгу.`,
+        supportedHeading: "Підтримувані формати:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Додаються лише треки, доступні у вибраному форматі.`,
+        howHeading: "Як це працює:",
+        howBody: `Пряме підключення до API метаданих Internet Archive. Контент не хоститься й не дзеркалиться —
+      використовуються публічні метадані для побудови M3U. Доступний попередній програвач.`,
+        downloadingHeading: "Завантаження:",
+        downloadingBody: `Після генерації плейлист можна зберегти як стандартний файл <code>.m3u</code>, сумісний з більшістю плеєрів.`,
+        privacyHeading: "Конфіденційність:",
+        privacyBody: `Усі обробки виконуються у вашому браузері. Дані не зберігаються та не відстежуються.`,
+        contribHeading: "Долучайтеся на GitHub:",
+        contribBody: `Проєкт з відкритим кодом! Пропозиції та баг‑репорти тут:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Відмова від відповідальності:",
+        disclaimerBody: `Це незалежний інтерфейс для зручності та навчання, не пов’язаний з Internet Archive.
+      Весь аудіоконтент транслюється з <a href="https://archive.org" target="_blank">archive.org</a> відповідно до їхніх
+      <a href="https://archive.org/about/terms.php" target="_blank">Правил користування</a>.`,
+
+        labelUrl: "Введіть URL елемента Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Оберіть аудіоформат",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Згенерувати плейлист",
+        btnDownload: "Завантажити M3U",
+        loadingText: "Завантаження...",
+
+        outputTitle: "Вміст плейлисту M3U",
+        previewTitle: "Попередній перегляд треків",
+        copyTitle: "Скопіювати в буфер обміну",
+
+        errInvalidUrl: "Недійсна URL‑адреса Internet Archive",
+        errFetch: "Не вдалося отримати метадані",
+        errNoFormatPrefix: "Не знайдено файлів для формату: ",
+
+        editOnGithub: "Редагувати цю сторінку на GitHub →"
+      },
+
+      // --- Vietnamese ---
+      vi: {
+        langCode: "vi",
+        metaTitle: "Trình tạo danh sách phát M3U cho Internet Archive & Live Music Archive",
+        metaDesc: "Tạo danh sách phát M3U từ các buổi hòa nhạc trên Internet Archive và Live Music Archive. Hỗ trợ MP3, FLAC, OGG với xem trước.",
+        metaKeywords: "trình tạo m3u, tạo m3u internet archive, live music archive m3u, danh sách phát flac, archive.org playlist",
+        ogTitle: "Trình tạo M3U cho Internet Archive",
+        ogDesc: "Tạo và tải xuống M3U cho bản ghi Internet Archive. Hỗ trợ MP3/FLAC/OGG.",
+        twitterTitle: "Trình tạo M3U cho Internet Archive",
+        twitterDesc: "Tạo M3U từ Internet Archive. Chọn định dạng, xem trước và tải xuống nhanh.",
+
+        pageTitle: "Trình tạo danh sách phát M3U cho Internet Archive",
+        aboutHeading: "Giới thiệu:",
+        aboutBody: `Công cụ miễn phí trên trình duyệt để tạo & tải M3U từ
+      <a href="https://archive.org" target="_blank">Internet Archive</a> (bao gồm
+      <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>). Dán URL,
+      chọn định dạng (MP3, FLAC, OGG...) và nhận M3U sẵn sàng phát trực tuyến.`,
+        supportedHeading: "Định dạng hỗ trợ:",
+        supportedBody: `&ndash; VBR MP3<br>&ndash; FLAC<br>&ndash; 24BIT FLAC<br>&ndash; OGG VORBIS<br>
+      Chỉ bao gồm các bản nhạc khả dụng ở định dạng đã chọn.`,
+        howHeading: "Cách hoạt động:",
+        howBody: `Kết nối trực tiếp với API siêu dữ liệu của Internet Archive. Không lưu trữ hay sao chép nội dung —
+      chỉ lấy siêu dữ liệu công khai để tạo M3U. Có trình phát xem trước.`,
+        downloadingHeading: "Tải xuống:",
+        downloadingBody: `Sau khi tạo, bạn có thể lưu dưới dạng tệp <code>.m3u</code> tiêu chuẩn tương thích với hầu hết trình phát.`,
+        privacyHeading: "Quyền riêng tư:",
+        privacyBody: `Mọi xử lý diễn ra trong trình duyệt của bạn. Chúng tôi không lưu hay theo dõi dữ liệu của bạn.`,
+        contribHeading: "Đóng góp trên GitHub:",
+        contribBody: `Dự án mã nguồn mở! Hoan nghênh đề xuất & báo lỗi tại:<br>
+      <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
+        https://github.com/everappz/archivetom3u
+      </a>`,
+        disclaimerHeading: "Tuyên bố miễn trừ:",
+        disclaimerBody: `Đây là giao diện độc lập phục vụ tiện lợi và giáo dục, không liên kết với Internet Archive.
+      Mọi âm thanh phát trực tiếp từ <a href="https://archive.org" target="_blank">archive.org</a> và tuân theo
+      <a href="https://archive.org/about/terms.php" target="_blank">Điều khoản sử dụng</a> của họ.`,
+
+        labelUrl: "Nhập URL mục Internet Archive",
+        placeholderUrl: "https://archive.org/details/...",
+        labelFormat: "Chọn định dạng âm thanh",
+        optMp3: "VBR MP3",
+        optFlac: "FLAC",
+        opt24Flac: "24BIT FLAC",
+        optOgg: "OGG VORBIS",
+
+        btnGenerate: "Tạo danh sách phát",
+        btnDownload: "Tải xuống M3U",
+        loadingText: "Đang tải...",
+
+        outputTitle: "Kết quả M3U",
+        previewTitle: "Xem trước bản nhạc",
+        copyTitle: "Sao chép vào clipboard",
+
+        errInvalidUrl: "URL Internet Archive không hợp lệ",
+        errFetch: "Không thể lấy siêu dữ liệu",
+        errNoFormatPrefix: "Không tìm thấy tệp cho định dạng: ",
+
+        editOnGithub: "Chỉnh sửa trang này trên GitHub →"
       }
+
     };
 
     const langSelect = document.getElementById('langSelect');
@@ -517,17 +2301,101 @@
       };
     }
 
-    // Init language: detect browser language (ru*, es* → ru/es; else en)
+    /* Persist to window for your existing applyLanguage() */
+    window.i18n = i18n;
+
+    /* ===============================
+       Language switch handler (keeps existing applyLanguage)
+       =============================== */
+    langSelect.addEventListener('change', () => applyLanguage(langSelect.value));
+
+    /* ===============================
+       Init language: robust detection across ALL supported languages
+       - Uses navigator.languages for best match
+       - Handles aliases (iw→he, in→id, nb/nn→no, zh variants, pt-BR→pt, etc.)
+       - Falls back to English
+       =============================== */
     (function initLanguage() {
-      const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      let defaultLang = 'en';
-      if (browserLang.startsWith('ru')) defaultLang = 'ru';
-      else if (browserLang.startsWith('es')) defaultLang = 'es';
+      // Build list of available codes from the <select> (keeps it source-of-truth)
+      const available = Array.from(langSelect.options).map(o => o.value);
+      // Map of lowercase -> actual value (preserves correct casing like 'zh-CN')
+      const availableLowerToActual = available.reduce((acc, code) => {
+        acc[code.toLowerCase()] = code;
+        return acc;
+      }, {});
+
+      // Common aliases & normalizations (all lowercase keys/values)
+      const aliasMap = {
+        // Legacy/alternate codes
+        'iw': 'he',
+        'he-il': 'he',
+        'in': 'id',
+        'nb': 'no',
+        'nb-no': 'no',
+        'nn': 'no',
+
+        // Portuguese
+        'pt-br': 'pt',
+        'pt-pt': 'pt',
+
+        // Chinese simplified/traditional variants
+        'zh': 'zh-cn',        // default to simplified when region unknown
+        'zh-hans': 'zh-cn',
+        'zh-cn': 'zh-cn',
+        'zh-sg': 'zh-cn',
+        'zh-my': 'zh-cn',
+        'zh-hant': 'zh-tw',
+        'zh-tw': 'zh-tw',
+        'zh-hk': 'zh-tw',
+        'zh-mo': 'zh-tw'
+      };
+
+      // Return the best available language code
+      function pickBestLanguage() {
+        const navLangsRaw = (navigator.languages && navigator.languages.length
+          ? navigator.languages
+          : [navigator.language || navigator.userLanguage || 'en']).slice();
+
+        // Normalize to lowercase
+        const navLangs = navLangsRaw.map(l => (l || '').toLowerCase()).filter(Boolean);
+
+        // Try each candidate in order of browser preference
+        for (const lang of navLangs) {
+          // 1) Exact match (including region)
+          if (availableLowerToActual[lang]) return availableLowerToActual[lang];
+
+          // 2) Alias mapping (full tag)
+          if (aliasMap[lang] && availableLowerToActual[aliasMap[lang]]) {
+            return availableLowerToActual[aliasMap[lang]];
+          }
+
+          // 3) Primary subtag match (e.g., 'es-419' → 'es')
+          const primary = lang.split('-')[0];
+          if (availableLowerToActual[primary]) return availableLowerToActual[primary];
+
+          // 4) Alias mapping on primary subtag
+          if (aliasMap[primary] && availableLowerToActual[aliasMap[primary]]) {
+            return availableLowerToActual[aliasMap[primary]];
+          }
+
+          // 5) Chinese special-case if only "zh" known after above attempts
+          if (primary === 'zh') {
+            const region = (lang.split('-')[1] || '').toLowerCase();
+            const zhTarget = (region === 'tw' || region === 'hk' || region === 'mo' || region === 'hant')
+              ? 'zh-tw'
+              : 'zh-cn';
+            if (availableLowerToActual[zhTarget]) return availableLowerToActual[zhTarget];
+          }
+        }
+
+        // Default fallback
+        return 'en';
+      }
+
+      const defaultLang = pickBestLanguage();
       langSelect.value = defaultLang;
       applyLanguage(defaultLang);
     })();
-
-    langSelect.addEventListener('change', () => applyLanguage(langSelect.value));
 
     // ====== App Logic ======
     async function generateM3U(redirect = false) {
