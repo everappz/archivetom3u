@@ -2,7 +2,7 @@
 
 Create and export `.m3u` playlists directly from Internet Archive items — including **Live Music Archive** recordings — and stream them in your favorite player (like [Flacbox](https://apps.apple.com/app/apple-store/id1097564256) or [Evermusic](https://apps.apple.com/app/id885367198)).
 
-🔗 **Live demo**: [archivetom3u.pages.dev](https://archivetom3u.pages.dev)
+🔗 **Live demo**: [archivetom3u.com](https://archivetom3u.com)
 
 ## 🚀 Features
 
