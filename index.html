@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <!-- Favicon and App Icons -->
@@ -22,7 +22,7 @@
   <meta name="msapplication-TileImage" content="/favicon-144x144.png">
   <meta name="msapplication-config" content="/browserconfig.xml">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" id="themeColor" content="#0f1117">
 
   <!-- iOS Web App Support -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -57,38 +57,448 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      padding-top: 60px;
-      padding-bottom: 60px;
+    /* ===== Theme Variables ===== */
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: 0.2s ease;
     }
 
+    /* Dark theme (default) */
+    [data-theme="dark"] {
+      --bg-primary: #0f1117;
+      --bg-secondary: #1a1d27;
+      --bg-tertiary: #242836;
+      --bg-hover: #2a2f3e;
+      --border-color: #2e3348;
+      --border-subtle: #1e2231;
+      --text-primary: #e8eaf0;
+      --text-secondary: #9ca3b4;
+      --text-muted: #6b7280;
+      --accent: #6c8cff;
+      --accent-hover: #8aa4ff;
+      --accent-subtle: rgba(108, 140, 255, 0.12);
+      --success: #34d399;
+      --success-hover: #4ade80;
+      --success-subtle: rgba(52, 211, 153, 0.12);
+      --danger: #f87171;
+      --danger-subtle: rgba(248, 113, 113, 0.12);
+      --warning: #fbbf24;
+      --code-bg: #161922;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --input-bg: #1a1d27;
+      --input-border: #2e3348;
+      --input-focus-border: #6c8cff;
+      --input-focus-shadow: 0 0 0 3px rgba(108, 140, 255, 0.15);
+      color-scheme: dark;
+    }
+
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-primary: #f8f9fc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f3f8;
+      --bg-hover: #e8ebf2;
+      --border-color: #e0e3ec;
+      --border-subtle: #edf0f5;
+      --text-primary: #1a1d2b;
+      --text-secondary: #5a6275;
+      --text-muted: #8891a4;
+      --accent: #4f6ef7;
+      --accent-hover: #3b5ce6;
+      --accent-subtle: rgba(79, 110, 247, 0.08);
+      --success: #10b981;
+      --success-hover: #059669;
+      --success-subtle: rgba(16, 185, 129, 0.08);
+      --danger: #ef4444;
+      --danger-subtle: rgba(239, 68, 68, 0.08);
+      --warning: #f59e0b;
+      --code-bg: #f6f8fa;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --input-bg: #ffffff;
+      --input-border: #d1d5e0;
+      --input-focus-border: #4f6ef7;
+      --input-focus-shadow: 0 0 0 3px rgba(79, 110, 247, 0.12);
+      color-scheme: light;
+    }
+
+    /* ===== Base ===== */
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      padding-top: 40px;
+      padding-bottom: 60px;
+      transition: background-color var(--transition), color var(--transition);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    a:hover { color: var(--accent-hover); }
+
+    /* ===== Top Bar ===== */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* ===== Theme Toggle ===== */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover {
+      background: var(--bg-hover);
+      color: var(--text-primary);
+      border-color: var(--accent);
+    }
+
+    /* ===== Language Select ===== */
+    .lang-select {
+      appearance: none;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 8px 36px 8px 12px;
+      font-size: 0.875rem;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: all var(--transition);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239ca3b4' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+    }
+    .lang-select:hover {
+      border-color: var(--accent);
+    }
+    .lang-select:focus {
+      outline: none;
+      border-color: var(--input-focus-border);
+      box-shadow: var(--input-focus-shadow);
+    }
+
+    /* ===== Page Title ===== */
+    .page-title {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* ===== Card ===== */
+    .card-modern {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: background-color var(--transition), border-color var(--transition);
+    }
+
+    /* ===== Info Section ===== */
+    .info-section {
+      margin-bottom: 32px;
+    }
+    .info-section .info-item {
+      padding: 12px 0;
+    }
+    .info-section .info-item + .info-item {
+      border-top: 1px solid var(--border-subtle);
+    }
+    .info-section .info-item strong {
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .info-section .info-item strong i {
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+    .info-section .info-item .info-body {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+    .info-section .info-item .info-body code {
+      background: var(--accent-subtle);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    .info-section hr {
+      border-color: var(--border-color);
+      opacity: 0.5;
+    }
+    .info-section .disclaimer-item strong i {
+      color: var(--warning);
+    }
+
+    /* ===== Form ===== */
+    .form-section {
+      margin-bottom: 24px;
+    }
+    .form-section label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+    .form-input,
+    .form-select-custom {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      background-color: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .form-input::placeholder {
+      color: var(--text-muted);
+    }
+    .form-input:focus,
+    .form-select-custom:focus {
+      outline: none;
+      border-color: var(--input-focus-border);
+      box-shadow: var(--input-focus-shadow);
+    }
+    .form-select-custom {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239ca3b4' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-modern {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(108, 140, 255, 0.3);
+    }
+    .btn-accent:active { transform: translateY(0); }
+
+    .btn-success-modern {
+      background: var(--success);
+      color: #fff;
+    }
+    .btn-success-modern:hover {
+      background: var(--success-hover);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+    }
+    .btn-success-modern:active { transform: translateY(0); }
+
+    .btn-gap {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    /* ===== Loading ===== */
+    .loading-indicator {
+      text-align: center;
+      padding: 24px;
+    }
+    .loading-indicator .spinner-border {
+      color: var(--accent) !important;
+    }
+
+    /* ===== Error Alert ===== */
+    .error-alert {
+      background: var(--danger-subtle);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* ===== M3U Block ===== */
     .m3u-block {
       white-space: pre-wrap;
-      background: #f8f9fa;
-      padding: 1em;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      background: var(--code-bg);
+      color: var(--text-secondary);
+      padding: 16px 20px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      word-break: break-all;
+      overflow-x: auto;
     }
 
+    /* ===== Output / Preview Section ===== */
+    .output-section {
+      margin-top: 24px;
+    }
+    .output-section h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .copy-icon {
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: color var(--transition);
+    }
+    .copy-icon:hover {
+      color: var(--accent);
+    }
+    .copy-icon.text-success-custom {
+      color: var(--success) !important;
+    }
+
+    /* ===== Track ===== */
     .track {
-      margin-bottom: 1rem;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+    }
+    .track:last-child { border-bottom: none; }
+    .track strong {
+      color: var(--text-primary);
+      font-weight: 500;
     }
 
     audio {
       width: 100%;
-      margin-top: 0.5rem;
+      margin-top: 8px;
+      border-radius: 6px;
+      height: 36px;
+    }
+
+    /* ===== Footer ===== */
+    .footer-modern {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-modern a {
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+    .footer-modern a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== Utilities ===== */
+    .d-none { display: none !important; }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 0 0 32px;
+      margin-bottom: 32px;
+    }
+    .hero-icon {
+      display: block;
+      width: 128px;
+      height: 128px;
+      margin: 0 auto 20px;
+    }
+    .hero-icon path {
+      fill: var(--accent);
+      transition: fill var(--transition);
+    }
+    .hero .page-title {
+      margin-bottom: 0;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 576px) {
+      body { padding-top: 24px; padding-bottom: 40px; }
+      .card-modern { padding: 18px; }
+      .hero { padding: 0 0 20px; margin-bottom: 20px; }
+      .hero-icon { width: 96px; height: 96px; margin-bottom: 14px; }
+      .btn-modern { padding: 12px 20px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" style="max-width: 680px;">
 
-    <!-- Language Switcher -->
-    <div class="d-flex justify-content-end">
-      <select id="langSelect" class="form-select w-auto mb-3" aria-label="Language switcher">
+    <!-- Top Bar: Theme Toggle + Language Switcher -->
+    <div class="top-bar">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="bi bi-sun-fill"></i>
+      </button>
+      <select id="langSelect" class="lang-select" aria-label="Language switcher">
         <option value="ar">العربية</option>
         <option value="ca">Català</option>
         <option value="zh-CN">简体中文</option>
@@ -124,153 +534,175 @@
       </select>
     </div>
 
-    <h1 id="pageTitle" class="my-4 text-center">Internet Archive M3U Playlist Builder</h1>
+    <!-- Hero -->
+    <div class="hero">
+      <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M 25 1 C 24.8405 1 24.680156 1.0372812 24.535156 1.1132812 L 3.5351562 12.113281 C 3.2061563 12.286281 3 12.628 3 13 L 3 15 C 3 15.552 3.448 16 4 16 L 46 16 C 46.553 16 47 15.552 47 15 L 47 13 C 47 12.628 46.794844 12.286281 46.464844 12.113281 L 25.464844 1.1132812 C 25.319844 1.0372812 25.1595 1 25 1 z M 25 7 C 26.656 7 28 8.343 28 10 C 28 11.657 26.656 13 25 13 C 23.343 13 22 11.657 22 10 C 22 8.343 23.343 7 25 7 z M 8 18 C 7.926 18 7.8619688 18.027969 7.7929688 18.042969 L 6 18.042969 L 6 19 C 6 19.552 6.448 20 7 20 L 7 36 L 13 36 L 13 20 C 13.552 20 14 19.552 14 19 L 14 18.042969 L 12.207031 18.042969 C 12.138031 18.027969 12.074 18 12 18 L 8 18 z M 18 18 C 17.926 18 17.861969 18.027969 17.792969 18.042969 L 16 18.042969 L 16 19 C 16 19.552 16.448 20 17 20 L 17 36 L 23 36 L 23 20 C 23.552 20 24 19.552 24 19 L 24 18.042969 L 22.207031 18.042969 C 22.138031 18.027969 22.074 18 22 18 L 18 18 z M 28 18 C 27.926 18 27.861969 18.027969 27.792969 18.042969 L 26 18.042969 L 26 19 C 26 19.552 26.447 20 27 20 L 27 36 L 33 36 L 33 20 C 33.553 20 34 19.552 34 19 L 34 18.042969 L 32.207031 18.042969 C 32.138031 18.027969 32.074 18 32 18 L 28 18 z M 38 18 C 37.924263 18 37.857994 18.027046 37.787109 18.042969 L 36 18.042969 L 36 19 C 36 19.552 36.447 20 37 20 L 37 36 L 43 36 L 43 20 C 43.553 20 44 19.552 44 19 L 44 18.042969 L 42.212891 18.042969 C 42.142006 18.027046 42.075737 18 42 18 L 38 18 z M 5 38 C 4.448 38 4 38.447 4 39 L 4 41 L 3 41 C 2.448 41 2 41.447 2 42 L 2 45 C 2 45.553 2.448 46 3 46 L 47 46 C 47.553 46 48 45.553 48 45 L 48 42 C 48 41.447 47.553 41 47 41 L 46 41 L 46 39 C 46 38.447 45.553 38 45 38 L 5 38 z"/></svg>
+      <h1 id="pageTitle" class="page-title">Internet Archive M3U Playlist Builder</h1>
+    </div>
 
     <!-- About / How it works -->
-    <div class="bg-white border rounded p-3 small text-muted text-start mt-5 description-paragraphs">
-      <p class="mb-2">
+    <div class="card-modern info-section description-paragraphs">
+      <div class="info-item">
         <strong>
-          <i class="bi bi-info-circle-fill me-1"></i>
+          <i class="bi bi-info-circle-fill"></i>
           <span id="aboutHeading">About this service:</span>
-        </strong><br>
-        <span id="aboutBody">
-          This free browser-based service allows you to instantly generate and download M3U playlists from
-          <a href="https://archive.org" target="_blank">Internet Archive</a> items, including the
-          <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Just paste a valid item
-          URL,
-          select your preferred audio format (MP3, FLAC, OGG, etc.), and get a fully structured M3U file for streaming
-          with one click.
-        </span>
-      </p><br>
+        </strong>
+        <div class="info-body">
+          <span id="aboutBody">
+            This free browser-based service allows you to instantly generate and download M3U playlists from
+            <a href="https://archive.org" target="_blank">Internet Archive</a> items, including the
+            <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a>. Just paste a valid item
+            URL,
+            select your preferred audio format (MP3, FLAC, OGG, etc.), and get a fully structured M3U file for streaming
+            with one click.
+          </span>
+        </div>
+      </div>
 
-      <p class="mb-2">
+      <div class="info-item">
         <strong><i class="bi bi-check-circle-fill"></i> <span id="supportedHeading">Supported
-            Formats:</span></strong><br>
-        <span id="supportedBody">
-          &ndash; VBR MP3<br>
-          &ndash; FLAC<br>
-          &ndash; 24BIT FLAC<br>
-          &ndash; OGG VORBIS<br>
-          Only tracks available in your selected format will be included in the generated playlist.
-        </span>
-      </p><br>
+            Formats:</span></strong>
+        <div class="info-body">
+          <span id="supportedBody">
+            &ndash; VBR MP3<br>
+            &ndash; FLAC<br>
+            &ndash; 24BIT FLAC<br>
+            &ndash; OGG VORBIS<br>
+            Only tracks available in your selected format will be included in the generated playlist.
+          </span>
+        </div>
+      </div>
 
-      <p class="mb-2">
-        <strong><i class="bi bi-lightning-charge-fill"></i> <span id="howHeading">How It Works:</span></strong><br>
-        <span id="howBody">
-          This service connects directly to the Internet Archive metadata API. No content is hosted or mirrored by this
-          site.
-          It simply fetches publicly available metadata and builds an M3U playlist based on your selection. You can also
-          preview each track with an inline audio player.
-        </span>
-      </p><br>
+      <div class="info-item">
+        <strong><i class="bi bi-lightning-charge-fill"></i> <span id="howHeading">How It Works:</span></strong>
+        <div class="info-body">
+          <span id="howBody">
+            This service connects directly to the Internet Archive metadata API. No content is hosted or mirrored by
+            this site.
+            It simply fetches publicly available metadata and builds an M3U playlist based on your selection. You can
+            also
+            preview each track with an inline audio player.
+          </span>
+        </div>
+      </div>
 
-      <p class="mb-2">
+      <div class="info-item">
         <strong><i class="bi bi-arrow-down-circle-fill"></i> <span
-            id="downloadingHeading">Downloading:</span></strong><br>
-        <span id="downloadingBody">
-          Once generated, your playlist can be downloaded as a standard <code>.m3u</code> file compatible with most
-          audio players.
-          No account, login, or software installation is required.
-        </span>
-      </p><br>
+            id="downloadingHeading">Downloading:</span></strong>
+        <div class="info-body">
+          <span id="downloadingBody">
+            Once generated, your playlist can be downloaded as a standard <code>.m3u</code> file compatible with most
+            audio players.
+            No account, login, or software installation is required.
+          </span>
+        </div>
+      </div>
 
-      <p class="mb-2">
-        <strong><i class="bi bi-shield-lock-fill"></i> <span id="privacyHeading">Privacy:</span></strong><br>
-        <span id="privacyBody">
-          All processing happens in your browser. This site does not store or track any user input, playback history, or
-          downloaded files.
-          Your data stays private and never leaves your device.
-        </span>
-      </p><br>
+      <div class="info-item">
+        <strong><i class="bi bi-shield-lock-fill"></i> <span id="privacyHeading">Privacy:</span></strong>
+        <div class="info-body">
+          <span id="privacyBody">
+            All processing happens in your browser. This site does not store or track any user input, playback history,
+            or
+            downloaded files.
+            Your data stays private and never leaves your device.
+          </span>
+        </div>
+      </div>
 
-      <p class="mb-2">
-        <strong><i class="bi bi-github"></i> <span id="contribHeading">Contribute on GitHub:</span></strong><br>
-        <span id="contribBody">
-          This service is open-source! If you'd like to improve it, report bugs, or suggest features, visit the project
-          page:<br>
-          <a href="https://github.com/everappz/archivetom3u" target="_blank" class="text-decoration-none">
-            https://github.com/everappz/archivetom3u
-          </a>
-        </span>
-      </p>
+      <div class="info-item">
+        <strong><i class="bi bi-github"></i> <span id="contribHeading">Contribute on GitHub:</span></strong>
+        <div class="info-body">
+          <span id="contribBody">
+            This service is open-source! If you'd like to improve it, report bugs, or suggest features, visit the
+            project
+            page:<br>
+            <a href="https://github.com/everappz/archivetom3u" target="_blank">
+              https://github.com/everappz/archivetom3u
+            </a>
+          </span>
+        </div>
+      </div>
 
-      <hr class="my-3">
+      <hr>
 
-      <p class="mb-2">
-        <strong><i class="bi bi-exclamation-triangle-fill text-warning"></i> <span
-            id="disclaimerHeading">Disclaimer:</span></strong><br>
-        <span id="disclaimerBody">
-          This site is an independent interface built for convenience and educational purposes only. It is not
-          affiliated with or endorsed by the Internet Archive.
-          All audio content and media links are streamed directly from <a href="https://archive.org"
-            target="_blank">archive.org</a>, and usage is subject to their official
-          <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>. No warranties are provided.
-          Use at your own risk and ensure compliance with any copyright,
-          licensing, or usage policies associated with the content.
-        </span>
-      </p>
+      <div class="info-item disclaimer-item">
+        <strong><i class="bi bi-exclamation-triangle-fill"></i> <span
+            id="disclaimerHeading">Disclaimer:</span></strong>
+        <div class="info-body">
+          <span id="disclaimerBody">
+            This site is an independent interface built for convenience and educational purposes only. It is not
+            affiliated with or endorsed by the Internet Archive.
+            All audio content and media links are streamed directly from <a href="https://archive.org"
+              target="_blank">archive.org</a>, and usage is subject to their official
+            <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>. No warranties are provided.
+            Use at your own risk and ensure compliance with any copyright,
+            licensing, or usage policies associated with the content.
+          </span>
+        </div>
+      </div>
     </div>
 
     <!-- Form -->
-    <div class="my-3">
-      <label id="labelUrl" for="archiveUrl" class="form-label">Enter Internet Archive Item URL</label>
-      <input type="text" class="form-control" id="archiveUrl" placeholder="https://archive.org/details/..." />
+    <div class="card-modern" style="margin-bottom: 24px;">
+      <div class="form-section">
+        <label id="labelUrl" for="archiveUrl">Enter Internet Archive Item URL</label>
+        <input type="text" class="form-input" id="archiveUrl" placeholder="https://archive.org/details/..." />
+      </div>
+
+      <div class="form-section" style="margin-bottom: 0;">
+        <label id="labelFormat" for="formatSelect">Select Audio Format</label>
+        <select class="form-select-custom" id="formatSelect">
+          <option id="optMp3" value="VBR MP3">VBR MP3</option>
+          <option id="optFlac" value="Flac">FLAC</option>
+          <option id="opt24Flac" value="24bit Flac">24BIT FLAC</option>
+          <option id="optOgg" value="OGG VORBIS">OGG VORBIS</option>
+        </select>
+      </div>
     </div>
 
-    <div class="mb-3">
-      <label id="labelFormat" for="formatSelect" class="form-label">Select Audio Format</label>
-      <select class="form-select" id="formatSelect">
-        <option id="optMp3" value="VBR MP3">VBR MP3</option>
-        <option id="optFlac" value="Flac">FLAC</option>
-        <option id="opt24Flac" value="24bit Flac">24BIT FLAC</option>
-        <option id="optOgg" value="OGG VORBIS">OGG VORBIS</option>
-      </select>
-    </div>
-
-    <div class="d-grid gap-3">
-      <button id="btnGenerate" class="btn btn-primary" onclick="generateM3U()">
-        <i class="bi bi-music-note-list me-1"></i> <span id="btnGenerateText">Generate Playlist</span>
+    <div class="btn-gap">
+      <button id="btnGenerate" class="btn-modern btn-accent" onclick="generateM3U()">
+        <i class="bi bi-music-note-list"></i> <span id="btnGenerateText">Generate Playlist</span>
       </button>
 
-      <a id="downloadBtn" class="btn btn-success d-none" download="playlist.m3u">
-        <i class="bi bi-download me-1"></i> <span id="btnDownloadText">Download M3U</span>
+      <a id="downloadBtn" class="btn-modern btn-success-modern d-none" download="playlist.m3u">
+        <i class="bi bi-download"></i> <span id="btnDownloadText">Download M3U</span>
       </a>
     </div>
 
     <!-- Loading Spinner -->
-    <div id="loadingIndicator" class="text-center my-4 d-none">
-      <div class="spinner-border text-primary" role="status">
+    <div id="loadingIndicator" class="loading-indicator d-none">
+      <div class="spinner-border" role="status">
         <span id="loadingText" class="visually-hidden">Loading...</span>
       </div>
     </div>
 
     <!-- Error Alert -->
-    <div id="errorAlert" class="alert alert-danger my-4 d-none" role="alert"></div>
+    <div id="errorAlert" class="error-alert d-none" role="alert"></div>
 
     <!-- M3U Output Section -->
-    <div id="outputSection" class="mt-4 d-none">
-      <h5 class="d-flex align-items-center justify-content-between">
+    <div id="outputSection" class="output-section d-none">
+      <h5>
         <span id="outputTitle">M3U Playlist Output</span>
-        <i class="bi bi-clipboard text-secondary" id="copyM3U" style="cursor:pointer;" title="Copy to clipboard"></i>
+        <i class="bi bi-clipboard copy-icon" id="copyM3U" title="Copy to clipboard"></i>
       </h5>
       <div id="result" class="m3u-block"></div>
     </div>
 
     <!-- Preview Section -->
-    <div id="previewSection" class="mt-4 d-none">
+    <div id="previewSection" class="output-section d-none">
       <h5 id="previewTitle">Track Previews</h5>
       <div id="trackList" class="m3u-block"></div>
     </div>
 
-    <footer class="text-center mt-5 text-muted small">
-      <p class="mb-1 text-secondary">
-        <a id="editOnGithub" href="https://github.com/everappz/archivetom3u/edit/main/index.html" target="_blank"
-          class="text-decoration-none text-secondary">Edit this page on GitHub →</a>
+    <footer class="footer-modern">
+      <p>
+        <a id="editOnGithub" href="https://github.com/everappz/archivetom3u/edit/main/index.html"
+          target="_blank">Edit this page on GitHub &rarr;</a>
       </p>
-      <p class="mt-3 mb-4 text-secondary" id="copyright">
-        &copy; 2025 <a href="https://www.everappz.com/" target="_blank"
-          class="text-decoration-none text-secondary">EVERAPPZ SL</a>
+      <p style="margin-top: 8px;" id="copyright">
+        &copy; 2025 <a href="https://www.everappz.com/" target="_blank">EVERAPPZ SL</a>
       </p>
     </footer>
 
@@ -2534,11 +2966,11 @@
       navigator.clipboard.writeText(content).then(() => {
         const icon = document.getElementById('copyM3U');
         icon.classList.replace('bi-clipboard', 'bi-clipboard-check');
-        icon.classList.replace('text-secondary', 'text-success');
+        icon.classList.add('text-success-custom');
         icon.title = (i18n[langSelect.value] || i18n.en).copyTitle || 'Copied!';
         setTimeout(() => {
           icon.classList.replace('bi-clipboard-check', 'bi-clipboard');
-          icon.classList.replace('text-success', 'text-secondary');
+          icon.classList.remove('text-success-custom');
           icon.title = (i18n[langSelect.value] || i18n.en).copyTitle || 'Copy to clipboard';
         }, 2000);
       });
@@ -2565,6 +2997,36 @@
         generateM3U(true); // automatic + redirect download
       }
     });
+
+    // ====== Theme Toggle ======
+    (function () {
+      const html = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const themeColorMeta = document.getElementById('themeColor');
+      const stored = localStorage.getItem('theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (systemDark ? 'dark' : 'light');
+
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        const icon = toggle.querySelector('i');
+        if (t === 'dark') {
+          icon.className = 'bi bi-sun-fill';
+          themeColorMeta.content = '#0f1117';
+        } else {
+          icon.className = 'bi bi-moon-fill';
+          themeColorMeta.content = '#f8f9fc';
+        }
+        localStorage.setItem('theme', t);
+      }
+
+      applyTheme(theme);
+
+      toggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
   </script>
 </body>
 
