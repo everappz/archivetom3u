@@ -2,6 +2,37 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- General Meta -->
+  <title id="metaTitle">M3U Playlist Generator for Internet Archive & Live Music Archive</title>
+  <meta id="metaDescription" name="description"
+    content="Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats. No signup required, 100% browser-based and private.">
+  <meta id="metaKeywords" name="keywords"
+    content="m3u playlist generator, internet archive playlist, live music archive m3u, archive.org playlist creator, flac playlist builder, internet archive audio player, m3u download, free playlist tool, archive.org m3u, streaming playlist generator">
+  <meta name="author" content="EVERAPPZ SL">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://archivetom3u.com/">
+
+  <!-- Open Graph Meta Tags -->
+  <meta id="ogTitle" property="og:title" content="M3U Playlist Generator for Internet Archive & Live Music Archive">
+  <meta id="ogDescription" property="og:description"
+    content="Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats. No signup required, 100% browser-based and private.">
+  <meta property="og:url" content="https://archivetom3u.com/">
+  <meta property="og:image" content="https://archivetom3u.com/favicon-512x512.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Archive to M3U">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta id="twitterTitle" name="twitter:title"
+    content="M3U Playlist Generator for Internet Archive & Live Music Archive">
+  <meta id="twitterDescription" name="twitter:description"
+    content="Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats.">
+  <meta name="twitter:image" content="https://archivetom3u.com/favicon-512x512.png">
+
   <!-- Favicon and App Icons -->
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60x60.png">
@@ -29,31 +60,93 @@
   <meta name="apple-mobile-web-app-title" content="M3U Generator">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-  <!-- General Meta -->
-  <title id="metaTitle">M3U Playlist Generator for Internet Archive & Live Music Archive</title>
-  <meta id="metaDescription" name="description"
-    content="Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Supports MP3, FLAC, OGG with previews.">
-  <meta id="metaKeywords" name="keywords"
-    content="m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist">
-
-  <!-- Open Graph Meta Tags -->
-  <meta id="ogTitle" property="og:title" content="M3U Playlist Generator for Internet Archive & Live Music Archive">
-  <meta id="ogDescription" property="og:description"
-    content="Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Supports MP3, FLAC, OGG with previews.">
-  <meta property="og:url" content="https://archivetom3u.com/">
-  <meta property="og:image" content="/favicon-512x512.png">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta id="twitterTitle" name="twitter:title"
-    content="M3U Playlist Generator for Internet Archive & Live Music Archive">
-  <meta id="twitterDescription" name="twitter:description"
-    content="Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Supports MP3, FLAC, OGG with previews.">
-  <meta name="twitter:image" content="/favicon-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta charset="UTF-8" />
+  <!-- Schema.org Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Archive to M3U - Internet Archive M3U Playlist Generator",
+    "url": "https://archivetom3u.com/",
+    "description": "Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats. No signup required, 100% browser-based and private.",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "EVERAPPZ SL",
+      "url": "https://www.everappz.com/"
+    },
+    "featureList": [
+      "Generate M3U playlists from Internet Archive items",
+      "Support for VBR MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats",
+      "Inline audio preview player",
+      "One-click M3U file download",
+      "100% client-side processing - no data leaves your browser",
+      "No account or signup required",
+      "Works with Live Music Archive recordings",
+      "Multi-language support for 24 languages"
+    ],
+    "screenshot": "https://archivetom3u.com/favicon-512x512.png",
+    "softwareHelp": {
+      "@type": "CreativeWork",
+      "url": "https://github.com/everappz/archivetom3u"
+    },
+    "license": "https://opensource.org/licenses/MIT"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Archive to M3U?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Archive to M3U is a free browser-based service that generates M3U playlists from Internet Archive items, including the Live Music Archive. Paste an archive.org URL, select your preferred audio format (MP3, FLAC, OGG), and download a ready-to-use M3U playlist file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What audio formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool supports VBR MP3, FLAC, 24-bit FLAC, and OGG Vorbis. Only tracks available in your selected format will be included in the generated playlist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does it work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The service connects directly to the Internet Archive metadata API. No content is hosted or mirrored. It fetches publicly available metadata and builds an M3U playlist based on your format selection. You can also preview each track with an inline audio player before downloading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All processing happens entirely in your browser. The site does not store or track any user input, playback history, or downloaded files. Your data stays private and never leaves your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. No account, login, or software installation is required. Simply paste an Internet Archive URL and generate your playlist."
+        }
+      }
+    ]
+  }
+  </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -557,7 +650,7 @@
   <div class="container" style="max-width: 680px;">
 
     <!-- Top Bar: Theme Toggle + Language Switcher -->
-    <div class="top-bar">
+    <nav class="top-bar" aria-label="Site controls">
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
         <i class="bi bi-sun-fill"></i>
       </button>
@@ -595,14 +688,15 @@
         <option value="uk">Українська</option>
         <option value="vi">Tiếng Việt</option>
       </select>
-    </div>
+    </nav>
 
     <!-- Hero -->
-    <div class="hero">
+    <header class="hero">
       <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M 25 1 C 24.8405 1 24.680156 1.0372812 24.535156 1.1132812 L 3.5351562 12.113281 C 3.2061563 12.286281 3 12.628 3 13 L 3 15 C 3 15.552 3.448 16 4 16 L 46 16 C 46.553 16 47 15.552 47 15 L 47 13 C 47 12.628 46.794844 12.286281 46.464844 12.113281 L 25.464844 1.1132812 C 25.319844 1.0372812 25.1595 1 25 1 z M 25 7 C 26.656 7 28 8.343 28 10 C 28 11.657 26.656 13 25 13 C 23.343 13 22 11.657 22 10 C 22 8.343 23.343 7 25 7 z M 8 18 C 7.926 18 7.8619688 18.027969 7.7929688 18.042969 L 6 18.042969 L 6 19 C 6 19.552 6.448 20 7 20 L 7 36 L 13 36 L 13 20 C 13.552 20 14 19.552 14 19 L 14 18.042969 L 12.207031 18.042969 C 12.138031 18.027969 12.074 18 12 18 L 8 18 z M 18 18 C 17.926 18 17.861969 18.027969 17.792969 18.042969 L 16 18.042969 L 16 19 C 16 19.552 16.448 20 17 20 L 17 36 L 23 36 L 23 20 C 23.552 20 24 19.552 24 19 L 24 18.042969 L 22.207031 18.042969 C 22.138031 18.027969 22.074 18 22 18 L 18 18 z M 28 18 C 27.926 18 27.861969 18.027969 27.792969 18.042969 L 26 18.042969 L 26 19 C 26 19.552 26.447 20 27 20 L 27 36 L 33 36 L 33 20 C 33.553 20 34 19.552 34 19 L 34 18.042969 L 32.207031 18.042969 C 32.138031 18.027969 32.074 18 32 18 L 28 18 z M 38 18 C 37.924263 18 37.857994 18.027046 37.787109 18.042969 L 36 18.042969 L 36 19 C 36 19.552 36.447 20 37 20 L 37 36 L 43 36 L 43 20 C 43.553 20 44 19.552 44 19 L 44 18.042969 L 42.212891 18.042969 C 42.142006 18.027046 42.075737 18 42 18 L 38 18 z M 5 38 C 4.448 38 4 38.447 4 39 L 4 41 L 3 41 C 2.448 41 2 41.447 2 42 L 2 45 C 2 45.553 2.448 46 3 46 L 47 46 C 47.553 46 48 45.553 48 45 L 48 42 C 48 41.447 47.553 41 47 41 L 46 41 L 46 39 C 46 38.447 45.553 38 45 38 L 5 38 z"/></svg>
       <h1 id="pageTitle" class="page-title">Internet Archive M3U Playlist Builder</h1>
-    </div>
+    </header>
 
+    <main>
     <!-- Form -->
     <div class="card-modern" style="margin-bottom: 30px;">
       <div class="form-section">
@@ -673,7 +767,7 @@
     </div>
 
     <!-- About / How it works -->
-    <div class="card-modern info-section description-paragraphs">
+    <section class="card-modern info-section description-paragraphs" aria-label="About and information">
       <div class="info-item">
         <strong>
           <i class="bi bi-info-circle-fill"></i>
@@ -755,7 +849,8 @@
           </span>
         </div>
       </div>
-    </div>
+    </section>
+    </main>
 
     <footer class="footer-modern">
       <p>
@@ -778,12 +873,12 @@
       en: {
         langCode: "en",
         metaTitle: "M3U Playlist Generator for Internet Archive & Live Music Archive",
-        metaDesc: "Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Supports MP3, FLAC, OGG with previews.",
-        metaKeywords: "m3u playlist generator, create m3u for internet archive, live music archive m3u, flac playlist builder, internet archive audio player, archive.org playlist",
+        metaDesc: "Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats. No signup required, 100% browser-based and private.",
+        metaKeywords: "m3u playlist generator, internet archive playlist, live music archive m3u, archive.org playlist creator, flac playlist builder, internet archive audio player, m3u download, free playlist tool, archive.org m3u, streaming playlist generator",
         ogTitle: "M3U Playlist Generator for Internet Archive & Live Music Archive",
-        ogDesc: "Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Supports MP3, FLAC, OGG with previews.",
+        ogDesc: "Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats. No signup required, 100% browser-based and private.",
         twitterTitle: "M3U Playlist Generator for Internet Archive & Live Music Archive",
-        twitterDesc: "Create M3U playlists from Internet Archive concerts and Live Music Archive recordings. Supports MP3, FLAC, OGG with previews.",
+        twitterDesc: "Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable M3U playlists from archive.org items in MP3, FLAC, 24-bit FLAC, and OGG Vorbis formats.",
 
         pageTitle: "Internet Archive M3U Playlist Builder",
         aboutHeading: "About this service:",

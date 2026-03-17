@@ -1,0 +1,46 @@
+# Archive to M3U
+
+> Free online M3U playlist generator for Internet Archive and Live Music Archive
+
+Archive to M3U (archivetom3u.com) is a free, open-source, browser-based tool that generates M3U playlist files from Internet Archive items, including Live Music Archive recordings.
+
+## What it does
+
+- Generates standard M3U playlist files from any Internet Archive item URL
+- Supports VBR MP3, FLAC, 24-bit FLAC, and OGG Vorbis audio formats
+- Provides inline audio preview for each track before downloading
+- Downloads playlists as .m3u files compatible with all major audio players (VLC, foobar2000, Winamp, IINA, etc.)
+
+## How to use
+
+1. Go to https://archivetom3u.com
+2. Paste an Internet Archive item URL (e.g., https://archive.org/details/example-item)
+3. Select your preferred audio format (MP3, FLAC, 24-bit FLAC, or OGG)
+4. Click "Generate Playlist"
+5. Preview tracks with the built-in audio player
+6. Click "Download M3U" to save the playlist file
+
+## Key features
+
+- 100% client-side: all processing happens in the browser, no server-side processing
+- Privacy-focused: no tracking, no cookies, no data collection, no account required
+- Multi-language: supports 24 languages with automatic browser language detection
+- PWA-ready: can be installed as a standalone app on mobile and desktop
+- Open-source: MIT licensed, available at https://github.com/everappz/archivetom3u
+
+## Technical details
+
+- Connects to the Internet Archive metadata API (https://archive.org/metadata/) to fetch item information
+- Filters files by the selected audio format
+- Constructs M3U playlists with EXTINF tags including track duration and title
+- Audio streams come directly from archive.org servers
+
+## Created by
+
+EVERAPPZ SL (https://www.everappz.com)
+
+## Links
+
+- Website: https://archivetom3u.com
+- GitHub: https://github.com/everappz/archivetom3u
+- Guide: https://www.everappz.com/docs/howto/how-to-create-m3u-playlist-for-internet-archive-or-live-music-archive/

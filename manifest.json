@@ -1,7 +1,7 @@
 {
-  "name": "My App",
-  "description": "My App description",
-  "short_name": "My App",
+  "name": "Archive to M3U - Internet Archive M3U Playlist Generator",
+  "description": "Free online M3U playlist generator for Internet Archive and Live Music Archive. Create downloadable playlists in MP3, FLAC, and OGG formats.",
+  "short_name": "Archive to M3U",
   "icons": [
     {
       "src": "/favicon-72x72.png",
@@ -56,5 +56,8 @@
   "start_url": "/?source=pwa",
   "display": "standalone",
   "theme_color": "#0f1117",
-  "background_color": "#0f1117"
+  "background_color": "#0f1117",
+  "categories": ["utilities", "music"],
+  "lang": "en",
+  "dir": "ltr"
 }
