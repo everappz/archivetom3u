@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
   <!-- Favicon and App Icons -->
@@ -70,7 +70,70 @@
       --transition: 0.2s ease;
     }
 
-    /* Dark theme (default) */
+    /* System dark preference (before JS sets data-theme) */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --bg-primary: #0f1117;
+        --bg-secondary: #1a1d27;
+        --bg-tertiary: #242836;
+        --bg-hover: #2a2f3e;
+        --border-color: #2e3348;
+        --border-subtle: #1e2231;
+        --text-primary: #e8eaf0;
+        --text-secondary: #9ca3b4;
+        --text-muted: #6b7280;
+        --accent: #6c8cff;
+        --accent-hover: #8aa4ff;
+        --accent-subtle: rgba(108, 140, 255, 0.12);
+        --success: #34d399;
+        --success-hover: #4ade80;
+        --success-subtle: rgba(52, 211, 153, 0.12);
+        --danger: #f87171;
+        --danger-subtle: rgba(248, 113, 113, 0.12);
+        --warning: #fbbf24;
+        --code-bg: #161922;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --input-bg: #1a1d27;
+        --input-border: #2e3348;
+        --input-focus-border: #6c8cff;
+        --input-focus-shadow: 0 0 0 3px rgba(108, 140, 255, 0.15);
+        color-scheme: dark;
+      }
+    }
+    /* System light preference (before JS sets data-theme) */
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme]) {
+        --bg-primary: #f8f9fc;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #f1f3f8;
+        --bg-hover: #e8ebf2;
+        --border-color: #e0e3ec;
+        --border-subtle: #edf0f5;
+        --text-primary: #1a1d2b;
+        --text-secondary: #5a6275;
+        --text-muted: #8891a4;
+        --accent: #4f6ef7;
+        --accent-hover: #3b5ce6;
+        --accent-subtle: rgba(79, 110, 247, 0.08);
+        --success: #10b981;
+        --success-hover: #059669;
+        --success-subtle: rgba(16, 185, 129, 0.08);
+        --danger: #ef4444;
+        --danger-subtle: rgba(239, 68, 68, 0.08);
+        --warning: #f59e0b;
+        --code-bg: #f6f8fa;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+        --input-bg: #ffffff;
+        --input-border: #d1d5e0;
+        --input-focus-border: #4f6ef7;
+        --input-focus-shadow: 0 0 0 3px rgba(79, 110, 247, 0.12);
+        color-scheme: light;
+      }
+    }
+
+    /* Dark theme (explicit) */
     [data-theme="dark"] {
       --bg-primary: #0f1117;
       --bg-secondary: #1a1d27;
@@ -229,15 +292,16 @@
 
     /* ===== Info Section ===== */
     .info-section {
+      margin-top: 30px;
       margin-bottom: 32px;
     }
-    .info-section .info-item {
+    .info-item {
       padding: 12px 0;
     }
     .info-section .info-item + .info-item {
       border-top: 1px solid var(--border-subtle);
     }
-    .info-section .info-item strong {
+    .info-item strong {
       color: var(--text-primary);
       display: flex;
       align-items: center;
@@ -246,16 +310,16 @@
       font-weight: 600;
       font-size: 0.9rem;
     }
-    .info-section .info-item strong i {
+    .info-item strong i {
       color: var(--accent);
       font-size: 0.95rem;
     }
-    .info-section .info-item .info-body {
+    .info-item .info-body {
       color: var(--text-secondary);
       font-size: 0.85rem;
       line-height: 1.65;
     }
-    .info-section .info-item .info-body code {
+    .info-item .info-body code {
       background: var(--accent-subtle);
       color: var(--accent);
       padding: 2px 6px;
@@ -266,7 +330,7 @@
       border-color: var(--border-color);
       opacity: 0.5;
     }
-    .info-section .disclaimer-item strong i {
+    .disclaimer-item strong i {
       color: var(--warning);
     }
 
@@ -356,7 +420,6 @@
     .btn-gap {
       display: grid;
       gap: 12px;
-      margin-top: 8px;
     }
 
     /* ===== Loading ===== */
@@ -469,7 +532,7 @@
       display: block;
       width: 128px;
       height: 128px;
-      margin: 0 auto 20px;
+      margin: 0 auto 40px;
     }
     .hero-icon path {
       fill: var(--accent);
@@ -538,6 +601,75 @@
     <div class="hero">
       <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M 25 1 C 24.8405 1 24.680156 1.0372812 24.535156 1.1132812 L 3.5351562 12.113281 C 3.2061563 12.286281 3 12.628 3 13 L 3 15 C 3 15.552 3.448 16 4 16 L 46 16 C 46.553 16 47 15.552 47 15 L 47 13 C 47 12.628 46.794844 12.286281 46.464844 12.113281 L 25.464844 1.1132812 C 25.319844 1.0372812 25.1595 1 25 1 z M 25 7 C 26.656 7 28 8.343 28 10 C 28 11.657 26.656 13 25 13 C 23.343 13 22 11.657 22 10 C 22 8.343 23.343 7 25 7 z M 8 18 C 7.926 18 7.8619688 18.027969 7.7929688 18.042969 L 6 18.042969 L 6 19 C 6 19.552 6.448 20 7 20 L 7 36 L 13 36 L 13 20 C 13.552 20 14 19.552 14 19 L 14 18.042969 L 12.207031 18.042969 C 12.138031 18.027969 12.074 18 12 18 L 8 18 z M 18 18 C 17.926 18 17.861969 18.027969 17.792969 18.042969 L 16 18.042969 L 16 19 C 16 19.552 16.448 20 17 20 L 17 36 L 23 36 L 23 20 C 23.552 20 24 19.552 24 19 L 24 18.042969 L 22.207031 18.042969 C 22.138031 18.027969 22.074 18 22 18 L 18 18 z M 28 18 C 27.926 18 27.861969 18.027969 27.792969 18.042969 L 26 18.042969 L 26 19 C 26 19.552 26.447 20 27 20 L 27 36 L 33 36 L 33 20 C 33.553 20 34 19.552 34 19 L 34 18.042969 L 32.207031 18.042969 C 32.138031 18.027969 32.074 18 32 18 L 28 18 z M 38 18 C 37.924263 18 37.857994 18.027046 37.787109 18.042969 L 36 18.042969 L 36 19 C 36 19.552 36.447 20 37 20 L 37 36 L 43 36 L 43 20 C 43.553 20 44 19.552 44 19 L 44 18.042969 L 42.212891 18.042969 C 42.142006 18.027046 42.075737 18 42 18 L 38 18 z M 5 38 C 4.448 38 4 38.447 4 39 L 4 41 L 3 41 C 2.448 41 2 41.447 2 42 L 2 45 C 2 45.553 2.448 46 3 46 L 47 46 C 47.553 46 48 45.553 48 45 L 48 42 C 48 41.447 47.553 41 47 41 L 46 41 L 46 39 C 46 38.447 45.553 38 45 38 L 5 38 z"/></svg>
       <h1 id="pageTitle" class="page-title">Internet Archive M3U Playlist Builder</h1>
+    </div>
+
+    <!-- Form -->
+    <div class="card-modern" style="margin-bottom: 30px;">
+      <div class="form-section">
+        <label id="labelUrl" for="archiveUrl">Enter Internet Archive Item URL</label>
+        <input type="text" class="form-input" id="archiveUrl" placeholder="https://archive.org/details/..." />
+      </div>
+
+      <div class="form-section">
+        <label id="labelFormat" for="formatSelect">Select Audio Format</label>
+        <select class="form-select-custom" id="formatSelect">
+          <option id="optMp3" value="VBR MP3">VBR MP3</option>
+          <option id="optFlac" value="Flac">FLAC</option>
+          <option id="opt24Flac" value="24bit Flac">24BIT FLAC</option>
+          <option id="optOgg" value="OGG VORBIS">OGG VORBIS</option>
+        </select>
+      </div>
+
+      <div class="info-item disclaimer-item" style="padding-bottom: 0;">
+        <strong><i class="bi bi-exclamation-triangle-fill"></i> <span
+            id="disclaimerHeading">Disclaimer:</span></strong>
+        <div class="info-body">
+          <span id="disclaimerBody">
+            This site is an independent interface built for convenience and educational purposes only. It is not
+            affiliated with or endorsed by the Internet Archive.
+            All audio content and media links are streamed directly from <a href="https://archive.org"
+              target="_blank">archive.org</a>, and usage is subject to their official
+            <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>. No warranties are provided.
+            Use at your own risk and ensure compliance with any copyright,
+            licensing, or usage policies associated with the content.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-gap">
+      <button id="btnGenerate" class="btn-modern btn-accent" onclick="generateM3U()">
+        <i class="bi bi-music-note-list"></i> <span id="btnGenerateText">Generate Playlist</span>
+      </button>
+
+      <a id="downloadBtn" class="btn-modern btn-success-modern d-none" download="playlist.m3u">
+        <i class="bi bi-download"></i> <span id="btnDownloadText">Download M3U</span>
+      </a>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingIndicator" class="loading-indicator d-none">
+      <div class="spinner-border" role="status">
+        <span id="loadingText" class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Error Alert -->
+    <div id="errorAlert" class="error-alert d-none" role="alert"></div>
+
+    <!-- M3U Output Section -->
+    <div id="outputSection" class="output-section d-none">
+      <h5>
+        <span id="outputTitle">M3U Playlist Output</span>
+        <i class="bi bi-clipboard copy-icon" id="copyM3U" title="Copy to clipboard"></i>
+      </h5>
+      <div id="result" class="m3u-block"></div>
+    </div>
+
+    <!-- Preview Section -->
+    <div id="previewSection" class="output-section d-none">
+      <h5 id="previewTitle">Track Previews</h5>
+      <div id="trackList" class="m3u-block"></div>
     </div>
 
     <!-- About / How it works -->
@@ -623,77 +755,6 @@
           </span>
         </div>
       </div>
-
-      <hr>
-
-      <div class="info-item disclaimer-item">
-        <strong><i class="bi bi-exclamation-triangle-fill"></i> <span
-            id="disclaimerHeading">Disclaimer:</span></strong>
-        <div class="info-body">
-          <span id="disclaimerBody">
-            This site is an independent interface built for convenience and educational purposes only. It is not
-            affiliated with or endorsed by the Internet Archive.
-            All audio content and media links are streamed directly from <a href="https://archive.org"
-              target="_blank">archive.org</a>, and usage is subject to their official
-            <a href="https://archive.org/about/terms.php" target="_blank">Terms of Use</a>. No warranties are provided.
-            Use at your own risk and ensure compliance with any copyright,
-            licensing, or usage policies associated with the content.
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Form -->
-    <div class="card-modern" style="margin-bottom: 24px;">
-      <div class="form-section">
-        <label id="labelUrl" for="archiveUrl">Enter Internet Archive Item URL</label>
-        <input type="text" class="form-input" id="archiveUrl" placeholder="https://archive.org/details/..." />
-      </div>
-
-      <div class="form-section" style="margin-bottom: 0;">
-        <label id="labelFormat" for="formatSelect">Select Audio Format</label>
-        <select class="form-select-custom" id="formatSelect">
-          <option id="optMp3" value="VBR MP3">VBR MP3</option>
-          <option id="optFlac" value="Flac">FLAC</option>
-          <option id="opt24Flac" value="24bit Flac">24BIT FLAC</option>
-          <option id="optOgg" value="OGG VORBIS">OGG VORBIS</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="btn-gap">
-      <button id="btnGenerate" class="btn-modern btn-accent" onclick="generateM3U()">
-        <i class="bi bi-music-note-list"></i> <span id="btnGenerateText">Generate Playlist</span>
-      </button>
-
-      <a id="downloadBtn" class="btn-modern btn-success-modern d-none" download="playlist.m3u">
-        <i class="bi bi-download"></i> <span id="btnDownloadText">Download M3U</span>
-      </a>
-    </div>
-
-    <!-- Loading Spinner -->
-    <div id="loadingIndicator" class="loading-indicator d-none">
-      <div class="spinner-border" role="status">
-        <span id="loadingText" class="visually-hidden">Loading...</span>
-      </div>
-    </div>
-
-    <!-- Error Alert -->
-    <div id="errorAlert" class="error-alert d-none" role="alert"></div>
-
-    <!-- M3U Output Section -->
-    <div id="outputSection" class="output-section d-none">
-      <h5>
-        <span id="outputTitle">M3U Playlist Output</span>
-        <i class="bi bi-clipboard copy-icon" id="copyM3U" title="Copy to clipboard"></i>
-      </h5>
-      <div id="result" class="m3u-block"></div>
-    </div>
-
-    <!-- Preview Section -->
-    <div id="previewSection" class="output-section d-none">
-      <h5 id="previewTitle">Track Previews</h5>
-      <div id="trackList" class="m3u-block"></div>
     </div>
 
     <footer class="footer-modern">
